@@ -7,7 +7,16 @@
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+  return(){
+axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => this.info = response)
+  }
+    
+  }
 
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
