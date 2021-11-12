@@ -1,10 +1,16 @@
+
 <template>
   <div class="container">
     <section class="background">
-      <div class="column1"></div>
+      <div class="column1">
+        <div class="search-bar">
+          <form> 
+              <input type="text" placeholder="Search a name.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button> 
+          </form>
+        </div>
+      </div>
       <div class="column2">
-        <div class="row1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-        <div class="row2"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
       </div>
     </section>
   </div>
@@ -12,21 +18,31 @@
 
 <style>
 
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
 
-.class {
-  background-image: url('./assets/vaporwave.jpg');
+.background {
+  background-image:   linear-gradient(0,#2A324B, #767B91), url('./assets/vaporwave.jpg');
+  background-blend-mode: screen;
+  background-size: cover;
+  margin: 0 auto;
 }
 
-#nav {
-  padding: 30px;
+.search-bar input{
+  font-size: 2rem;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.search-bar button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.search-bar button:hover {
+  background: #ccc;
 }
+
 </style>
