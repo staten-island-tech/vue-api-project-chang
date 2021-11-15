@@ -6,7 +6,7 @@
         <div class="search-bar">
           <form> 
               <input type="text" placeholder="Search a name.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button> 
+              <button type="submit" ><i class="fa fa-search"></i></button> 
           </form>
         </div>
       </div>
@@ -15,6 +15,37 @@
     </section>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return{
+
+        }
+    },
+
+    components: {
+
+    },
+          
+          methods: {
+            async getData() {
+              try {
+                const response = await fetch("https://www.jailbase.com/api/1/search/?source_id=az-mcso&last_name=smith");
+                const data = await response.json();
+                console.log(data);
+              
+              } catch (error) {
+              console.log(error);
+              }
+            }
+          },
+          mounted() {
+            this.getData();
+          }
+  }
+  
+
+</script>
 
 <style>
 
@@ -44,5 +75,4 @@
 .search-bar button:hover {
   background: #ccc;
 }
-
 </style>
