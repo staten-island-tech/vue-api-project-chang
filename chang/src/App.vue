@@ -30,7 +30,7 @@ export default {
           methods: {
             async getData() {
               try {
-                const response = await fetch("https://www.jailbase.com/api/1/search/?source_id=az-mcso&last_name=smith");
+                const response = await fetch("https://api.agify.io/?name=bella");
                 const data = await response.json();
                 console.log(data);
               
