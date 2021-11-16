@@ -1,36 +1,79 @@
+
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="container">
+    <section class="background">
+      <div class="column1">
+        <div class="search-bar">
+          <form> 
+              <input type="text" placeholder="Search a name.." name="search">
+              <button type="submit" ><i class="fa fa-search"></i></button> 
+          </form>
+        </div>
+      </div>
+      <div class="column2">
+      </div>
+    </section>
   </div>
 </template>
 <script>
- 
+export default {
+  data() {
+    return{
+
+        }
+    },
+
+    components: {
+
+    },
+          
+          methods: {
+            async getData() {
+              try {
+                const response = await fetch("https://byabbe.se/on-this-day/10/10/births.json");
+                const data = await response.json();
+                console.log(data);
+              
+              } catch (error) {
+              console.log(error);
+              }
+            }
+          },
+          mounted() {
+            this.getData();
+          }
+  }
   
 
 </script>
+
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+
+.background {
+  background-image:   linear-gradient(0,#2A324B, #767B91), url('./assets/vaporwave.jpg');
+  background-blend-mode: screen;
+  background-size: cover;
+  margin: 0 auto;
 }
 
-#nav {
-  padding: 30px;
+.search-bar input{
+  font-size: 2rem;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.search-bar button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.search-bar button:hover {
+  background: #ccc;
 }
 </style>
