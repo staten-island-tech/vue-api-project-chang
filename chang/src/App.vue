@@ -30,7 +30,7 @@ export default {
           methods: {
             async getData() {
               try {
-                const response = await fetch("https://api.agify.io/?name=bella");
+                const response = await fetch("https://byabbe.se/on-this-day/10/10/births.json");
                 const data = await response.json();
                 console.log(data);
               
