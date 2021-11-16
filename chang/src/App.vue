@@ -30,7 +30,7 @@ export default {
           methods: {
             async getData() {
               try {
-                const response = await fetch("https://byabbe.se/on-this-day/10/10/births.json");
+                const response = await fetch(`https://byabbe.se/on-this-day/${this.day}/10/births.json`);
                 const data = await response.json();
                 console.log(data);
               
@@ -39,7 +39,7 @@ export default {
               }
             }
           },
-          mounted() {
+          created() {
             this.getData();
           }
   }
@@ -47,7 +47,7 @@ export default {
 
 </script>
 
-</script>
+
 <style>
 
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
