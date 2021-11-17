@@ -1,8 +1,21 @@
 <template>
   <div>
-    <ul class="births-container">
-      <li class="births-list">Test</li>
-    </ul>
+    <section class="background">
+      <div class="column1">
+        <div class="search-bar">
+          <form>
+            <input
+              id="search"
+              type="text"
+              placeholder="Enter Month"
+              v-model="day"
+            />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="column2"></div>
+    </section>
   </div>
 </template>
 
@@ -11,10 +24,10 @@ export default {
   data() {
     return {
       births: [],
-      day: 2,
-      month: 15,
+      day: null,
     };
   },
+
   created() {
     this.fetchData();
   },
@@ -31,6 +44,11 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+    submitEvent() {
+      let day = this.day;
+      console.log(day);
+      this.day = null;
     },
   },
 };

@@ -3,38 +3,18 @@
   <div class="container">
     <router-link to="/births">Births</router-link> |
     <router-link to="/about">About</router-link>
-    <section class="background">
-      <div class="column1">
-        <div class="search-bar">
-          <form>
-            <input
-              id="search"
-              type="text"
-              placeholder="Search a name.."
-              name="search"
-            />
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-      </div>
-      <div class="column2"></div>
-    </section>
-    <Births />
   </div>
 </template>
 <script>
-import Births from "../src/components/historicalBirths.vue";
 export default {
   data() {
     return {
-      day: 1,
+      day: null,
       month: 14,
     };
   },
 
-  components: {
-    Births,
-  },
+  components: {},
 };
 </script>
 

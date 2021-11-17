@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Births from "../components/historicalBirths.vue";
+import Births from "../views/historicalBirths.vue";
 
 Vue.use(VueRouter);
 
