@@ -3,6 +3,7 @@
   <div class="container">
     <router-link to="/births">Births</router-link> |
     <router-link to="/about">About</router-link>
+    <router-view />
   </div>
 </template>
 <script>

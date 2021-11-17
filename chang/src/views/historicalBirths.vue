@@ -3,7 +3,7 @@
     <section class="background">
       <div class="column1">
         <div class="search-bar">
-          <form>
+          <form @submit="fetchData">
             <input
               id="search"
               type="text"

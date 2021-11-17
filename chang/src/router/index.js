@@ -1,14 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Births from "../views/historicalBirths.vue";
+// import Births from "../views/historicalBirths.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/births",
     name: "Births",
-    component: Births,
+    component: () => import("../views/historicalBirths.vue"),
   },
   {
     path: "/about",
