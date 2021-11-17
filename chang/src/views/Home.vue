@@ -1,18 +1,18 @@
 <template>
   <div class="home">
   
-
+<Births/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import births
 
 
 export default {
   name: 'Home',
   components: {
-    
+    Births
   }
 }
 </script>

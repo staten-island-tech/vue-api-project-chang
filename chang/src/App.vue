@@ -4,8 +4,9 @@
     <section class="background">
       <div class="column1">
         <div class="search-bar">
+          
           <form> 
-              <input type="text" placeholder="Search a name.." name="search">
+              <input id="search" type="text" placeholder="Search a name.." name="search">
               <button type="submit" ><i class="fa fa-search"></i></button> 
           </form>
         </div>
@@ -19,7 +20,8 @@
 export default {
   data() {
     return{
-
+day: 1,
+month: 14
         }
     },
 
@@ -28,9 +30,9 @@ export default {
     },
           
           methods: {
-            async getData() {
+            fetchData: async function() {
               try {
-                const response = await fetch(`https://byabbe.se/on-this-day/${this.day}/10/births.json`);
+                const response = await fetch(`https://byabbe.se/on-this-day/${this.day}/${this.month}/births.json`);
                 const data = await response.json();
                 console.log(data);
               
@@ -40,7 +42,7 @@ export default {
             }
           },
           created() {
-            this.getData();
+            this.fetchData();
           }
   }
   
