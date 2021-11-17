@@ -1,67 +1,56 @@
 
 <template>
   <div class="container">
+    <router-link to="/births">Births</router-link> |
+    <router-link to="/about">About</router-link>
     <section class="background">
       <div class="column1">
         <div class="search-bar">
-          
-          <form> 
-              <input id="search" type="text" placeholder="Search a name.." name="search">
-              <button type="submit" ><i class="fa fa-search"></i></button> 
+          <form>
+            <input
+              id="search"
+              type="text"
+              placeholder="Search a name.."
+              name="search"
+            />
+            <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
       </div>
-      <div class="column2">
-      </div>
+      <div class="column2"></div>
     </section>
+    <Births />
   </div>
 </template>
 <script>
+import Births from "../src/components/historicalBirths.vue";
 export default {
   data() {
-    return{
-day: 1,
-month: 14
-        }
-    },
+    return {
+      day: 1,
+      month: 14,
+    };
+  },
 
-    components: {
-
-    },
-          
-          methods: {
-            fetchData: async function() {
-              try {
-                const response = await fetch(`https://byabbe.se/on-this-day/${this.day}/${this.month}/births.json`);
-                const data = await response.json();
-                console.log(data);
-              
-              } catch (error) {
-              console.log(error);
-              }
-            }
-          },
-          created() {
-            this.fetchData();
-          }
-  }
-  
-
+  components: {
+    Births,
+  },
+};
 </script>
 
 
 <style>
-
-@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 
 .background {
-  background-image:   linear-gradient(0,#2A324B, #767B91), url('./assets/vaporwave.jpg');
+  background-image: linear-gradient(0, #2a324b, #767b91),
+    url("./assets/vaporwave.jpg");
   background-blend-mode: screen;
   background-size: cover;
   margin: 0 auto;
 }
 
-.search-bar input{
+.search-bar input {
   font-size: 2rem;
 }
 
