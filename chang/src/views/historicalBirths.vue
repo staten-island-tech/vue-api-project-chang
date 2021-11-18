@@ -72,6 +72,7 @@ export default {
   background-blend-mode: screen;
   background-size: cover;
   margin: 0 auto;
+  height: 83vh;
 }
 
 .search-bar input {
