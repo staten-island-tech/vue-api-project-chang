@@ -1,64 +1,37 @@
 
 <template>
   <div class="container">
-    <section class="background">
-      <div class="column1">
-        <div class="search-bar">
-          <form> 
-              <input type="text" placeholder="Search a name.." name="search">
-              <button type="submit" ><i class="fa fa-search"></i></button> 
-          </form>
-        </div>
-      </div>
-      <div class="column2">
-      </div>
-    </section>
+    <router-link to="/births">Births</router-link> |
+    <router-link to="/about">About</router-link>
+    <router-view />
   </div>
 </template>
 <script>
 export default {
   data() {
-    return{
+    return {
+      day: null,
+      month: 14,
+    };
+  },
 
-        }
-    },
-
-    components: {
-
-    },
-          
-          methods: {
-            async getData() {
-              try {
-                const response = await fetch("https://byabbe.se/on-this-day/10/10/births.json");
-                const data = await response.json();
-                console.log(data);
-              
-              } catch (error) {
-              console.log(error);
-              }
-            }
-          },
-          mounted() {
-            this.getData();
-          }
-  }
-  
-
+  components: {},
+};
 </script>
 
-<style>
 
-@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+<style>
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 
 .background {
-  background-image:   linear-gradient(0,#2A324B, #767B91), url('./assets/vaporwave.jpg');
+  background-image: linear-gradient(0, #2a324b, #767b91),
+    url("./assets/vaporwave.jpg");
   background-blend-mode: screen;
   background-size: cover;
   margin: 0 auto;
 }
 
-.search-bar input{
+.search-bar input {
   font-size: 2rem;
 }
 
