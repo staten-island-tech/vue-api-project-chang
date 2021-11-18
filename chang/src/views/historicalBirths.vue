@@ -17,6 +17,8 @@
               placeholder="Enter Day"
               v-model="day"
             />
+            <h1 v-if="births.year">{{ births.year }}</h1>
+            <p v-else>loading.....</p>
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
@@ -44,7 +46,7 @@ export default {
     fetchData: async function () {
       try {
         const response = await fetch(
-          `https://byabbe.se/on-this-day/${this.day}/${this.month}/births.json`
+          `https://byabbe.se/on-this-day/${this.month}/${this.day}/births.json`
         );
         const data = await response.json();
         this.births = data.births;
@@ -72,6 +74,7 @@ export default {
   background-blend-mode: screen;
   background-size: cover;
   margin: 0 auto;
+  height: 100%;
 }
 
 .search-bar input {
