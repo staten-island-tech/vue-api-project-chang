@@ -68,7 +68,7 @@ export default {
 <style>
 .background {
   background-image: linear-gradient(0, #2a324b, #767b91),
-    url("chang/src/assets/vaporwave.jpg");
+    url("../assets/vaporwave.jpg");
   background-blend-mode: screen;
   background-size: cover;
   margin: 0 auto;
