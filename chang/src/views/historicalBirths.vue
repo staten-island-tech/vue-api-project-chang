@@ -1,13 +1,20 @@
 <template>
   <div>
-    <section class="background">
+    <div class="background">
       <div class="column1">
         <div class="search-bar">
-          <form @submit="fetchData">
+          <form @submit.prevent="fetchData">
             <input
               id="search"
               type="text"
               placeholder="Enter Month"
+              v-model="month"
+            />
+
+            <input
+              id="search"
+              type="text"
+              placeholder="Enter Day"
               v-model="day"
             />
             <button type="submit"><i class="fa fa-search"></i></button>
@@ -15,7 +22,7 @@
         </div>
       </div>
       <div class="column2"></div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -25,6 +32,7 @@ export default {
     return {
       births: [],
       day: null,
+      month: null,
     };
   },
 
@@ -49,10 +57,38 @@ export default {
       let day = this.day;
       console.log(day);
       this.day = null;
+      let month = this.month;
+      console.log(month);
+      this.month = null;
     },
   },
 };
 </script>
 
 <style>
+.background {
+  background-image: linear-gradient(0, #2a324b, #767b91),
+    url("../assets/vaporwave.jpg");
+  background-blend-mode: screen;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  font-size: 2rem;
+}
+
+.search-bar button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #ccc;
+}
 </style>
