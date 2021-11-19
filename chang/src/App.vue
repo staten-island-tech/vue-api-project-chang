@@ -3,9 +3,9 @@
   <div class="container">
     <div class="buttons">
       <div class="test">
-      <button type="submit"><i class="fa fa-home" ></i></button>
+      <router-link to="/" > <button class = "button-1"> <i class="fa fa-home" ></i></button></router-link>
       <router-link to="/births"><button class="button-1"> Births</button> </router-link> 
-      <router-link to="/about"><button class="button-1"> About </button> </router-link>
+      <router-link to="/about"><button class="button-1"> Deaths </button> </router-link>
       <router-view />
       </div>
     </div>
@@ -88,8 +88,6 @@ body {
   box-shadow: none;
   transform: translateY(0);
 }
-
-
 
 
 </style>
