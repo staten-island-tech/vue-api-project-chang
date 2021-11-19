@@ -3,12 +3,15 @@
   <div class="container">
     <div class="buttons">
       <div class="test">
-      <router-link to="/births"><button> Births</button> </router-link> 
-      <router-link to="/about"><button> About </button> </router-link>
+      <button type="submit"><i class="fa fa-home" ></i></button>
+      <router-link to="/births"><button class="button-1"> Births</button> </router-link> 
+      <router-link to="/about"><button class="button-1"> About </button> </router-link>
       <router-view />
       </div>
     </div>
+    <div class="content"></div>
   </div>
+  
 </template>
 <script>
 export default {
@@ -32,20 +35,62 @@ body {
   background-color: #2A324B;
 }
 
-.test {
+.content {
   background-color: #C7CCDB;
-  /* margin: 0 auto; */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.test {
+  
+  text-align: center;
+  padding: 3rem;
+}
+
+.button-1 {
+  appearance: none;
+  background-color: #E1E5ED;
+  border: 2px solid #2A324B;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 30%;
+  will-change: transform;
+}
+
+.button-1:disabled {
+  pointer-events: none;
+}
+
+.button-1:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-1:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 
-.container {
-    margin: 0 auto;
-    position: relative;
-    height: 200px;
-}
+
+
 </style>
 
