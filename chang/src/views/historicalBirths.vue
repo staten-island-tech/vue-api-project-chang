@@ -67,7 +67,7 @@ export default {
 
 <style>
 .background {
-  background-image: linear-gradient(0, #2a324b, #767b91),
+  background-image: linear-gradient(0, #E1E5EE, #767b91),
     url("../assets/vaporwave.jpg");
   background-blend-mode: screen;
   background-size: cover;
@@ -76,7 +76,7 @@ export default {
 }
 
 .search-bar input {
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 .search-bar button {
