@@ -17,6 +17,12 @@
               placeholder="Enter Day"
               v-model="day"
             />
+            <div class="birth-data" v-for="birth in births" :key="birth.year">
+              <h2>
+                {{ birth.description + " was born in the year " + birth.year }}
+              </h2>
+              <h2></h2>
+            </div>
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
@@ -44,7 +50,7 @@ export default {
     fetchData: async function () {
       try {
         const response = await fetch(
-          `https://byabbe.se/on-this-day/${this.day}/${this.month}/births.json`
+          `https://byabbe.se/on-this-day/${this.month}/${this.day}/births.json`
         );
         const data = await response.json();
         this.births = data.births;
