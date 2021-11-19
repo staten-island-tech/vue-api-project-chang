@@ -17,8 +17,12 @@
               placeholder="Enter Day"
               v-model="day"
             />
-            <h1 v-if="births.year">{{ births.year }}</h1>
-            <p v-else>loading.....</p>
+            <div class="birth-data" v-for="birth in births" :key="birth.year">
+              <h2>
+                {{ birth.description + " was born in the year " + birth.year }}
+              </h2>
+              <h2></h2>
+            </div>
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
