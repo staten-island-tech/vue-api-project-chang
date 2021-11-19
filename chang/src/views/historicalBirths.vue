@@ -42,9 +42,9 @@ export default {
     };
   },
 
-  created() {
-    this.fetchData();
-  },
+  // created() {
+  //   this.fetchData();
+  // },
   name: "Births",
   methods: {
     fetchData: async function () {
