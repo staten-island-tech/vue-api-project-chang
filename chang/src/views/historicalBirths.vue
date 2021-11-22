@@ -17,9 +17,15 @@
               placeholder="Enter Day"
               v-model="day"
             />
-            <div class="birth-data" v-for="birth in births" :key="birth.year">
+            <!-- <div class="birth-data" v-for="birth in births" :key="birth.year">
               <h2>
                 {{ birth.description + " was born in the year " + birth.year }}
+              </h2>
+              <h2></h2>
+            </div> -->
+            <div class="birth-data">
+              <h2>
+                {{ births[0] }}
               </h2>
               <h2></h2>
             </div>
@@ -36,6 +42,7 @@
 export default {
   data() {
     return {
+      index: 0,
       births: [],
       day: null,
       month: null,
@@ -55,6 +62,7 @@ export default {
         const data = await response.json();
         this.births = data.births;
         console.log(data);
+        console.log(this.births[0]);
       } catch (error) {
         console.log(error);
       }
@@ -73,7 +81,7 @@ export default {
 
 <style>
 .background {
-  background-image: linear-gradient(0, #E1E5EE, #767b91),
+  background-image: linear-gradient(0, #e1e5ee, #767b91),
     url("../assets/vaporwave.jpg");
   background-blend-mode: screen;
   background-size: cover;
