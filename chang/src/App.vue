@@ -1,15 +1,17 @@
 
 <template>
   <div class="container">
-    <div class="buttons">
       <div class="test">
       <router-link to="/" > <button class = "button-1"> <i class="fa fa-home" ></i></button></router-link>
       <router-link to="/births"><button class="button-1"> Births</button> </router-link> 
       <router-link to="/about"><button class="button-1"> Deaths </button> </router-link>
       <router-view />
       </div>
+    <div class="content">
+      <!-- <div class="title">
+      <h1> Welcome to Birthday Match! </h1>
+      </div> -->
     </div>
-    <div class="content"></div>
   </div>
   
 </template>
@@ -22,23 +24,29 @@ export default {
     };
   },
 
-  components: {},
+  components: {
+
+  },
 };
 </script>
 
 
 <style>
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap";
 
 body {
   margin: 0 auto;
   background-color: #2A324B;
 }
 
-.content {
-  background-color: #C7CCDB;
+.title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  color: #8288A1;
+  margin: auto;
 }
-
 .test {
   
   text-align: center;
