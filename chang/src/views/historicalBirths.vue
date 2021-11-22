@@ -1,34 +1,24 @@
 <template>
   <div>
-    <div class="background">
+
       <div class="column1">
         <div class="search-bar">
           <form @submit.prevent="fetchData">
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Month"
-              v-model="month"
-            />
-
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Day"
-              v-model="day"
-            />
-            <div class="birth-data" v-for="birth in births" :key="birth.year">
-              <h2>
-                {{ birth.description + " was born in the year " + birth.year }}
-              </h2>
-              <h2></h2>
-            </div>
+            <input id="search" type="text" placeholder="Enter Month" v-model="month" />
+            <input id="search" type="text" placeholder="Enter Day" v-model="day"/>
             <button type="submit"><i class="fa fa-search"></i></button>
+            <div class="background">
+            <div class="birth-data" v-for="birth in births" :key="birth.year">
+                <h2>
+                  {{ birth.description + " was born in the year " + birth.year }}
+                </h2>
+                </div>
+            </div>
           </form>
         </div>
       </div>
+  
       <div class="column2"></div>
-    </div>
   </div>
 </template>
 
@@ -78,11 +68,11 @@ export default {
   background-blend-mode: screen;
   background-size: cover;
   margin: 0 auto;
-  height: 83vh;
+  height: 100%;
 }
 
 .search-bar input {
-  font-size: 2.25rem;
+  font-size: 2.28rem;
 }
 
 .search-bar button {
@@ -97,5 +87,9 @@ export default {
 
 .search-bar button:hover {
   background: #ccc;
+}
+
+.search-bar {
+  padding: 2rem;
 }
 </style>
