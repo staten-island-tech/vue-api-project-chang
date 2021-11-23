@@ -25,9 +25,10 @@
             </div> -->
             <div class="birth-data">
               <h2>
-                {{ births[0] }}
+                {{ birthDescription + " was born in " + year }}
               </h2>
-              <h2></h2>
+              <button @click="index++">Next</button>
+              <button @click="index--">Previous</button>
             </div>
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
@@ -42,10 +43,11 @@
 export default {
   data() {
     return {
-      index: 0,
-      births: [],
-      day: null,
-      month: null,
+      index: 1,
+      year: {},
+      birthDescription: {},
+      day: {},
+      month: {},
     };
   },
 
@@ -60,11 +62,13 @@ export default {
           `https://byabbe.se/on-this-day/${this.month}/${this.day}/births.json`
         );
         const data = await response.json();
-        this.births = data.births;
+        this.year = data.births[this.index].year;
+        this.birthDescription = data.births[this.index].description;
+
         console.log(data);
-        console.log(this.births[0]);
+        console.log(this.births);
       } catch (error) {
-        console.log(error);
+        alert(error);
       }
     },
     submitEvent() {
