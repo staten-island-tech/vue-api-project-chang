@@ -2,10 +2,16 @@
 <template>
   <div class="container">
       <div class="test">
-      <router-link to="/" > <button class = "button-1"> <i class="fa fa-home" ></i></button></router-link>
-      <router-link to="/births"><button class="button-1"> Births</button> </router-link> 
-      <router-link to="/about"><button class="button-1"> Deaths </button> </router-link>
-      <router-view />
+        <router-link to="/">
+          <button class="button-1"><i class="fa fa-home"></i></button
+        ></router-link>
+        <router-link to="/births"
+          ><button class="button-1">Births</button>
+        </router-link>
+        <router-link to="/deaths"
+          ><button class="button-1">Deaths</button>
+        </router-link>
+        <router-view />
       </div>
     <div class="content">
       <!-- <div class="title">
@@ -13,14 +19,13 @@
       </div> -->
     </div>
   </div>
-  
 </template>
 <script>
 export default {
   data() {
     return {
       day: null,
-      month: 14,
+      month: null,
     };
   },
 
@@ -37,7 +42,7 @@ export default {
 
 body {
   margin: 0 auto;
-  background-color: #2A324B;
+  background-color: #2a324b;
 }
 
 .title {
@@ -47,22 +52,24 @@ body {
   color: #8288A1;
   margin: auto;
 }
+
+
 .test {
-  
   text-align: center;
   padding: 3rem;
 }
 
 .button-1 {
   appearance: none;
-  background-color: #E1E5ED;
-  border: 2px solid #2A324B;
+  background-color: #e1e5ed;
+  border: 2px solid #2a324b;
   border-radius: 15px;
   box-sizing: border-box;
-  color: #3B3B3B;
+  color: #3b3b3b;
   cursor: pointer;
   display: inline-block;
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -73,7 +80,7 @@ body {
   padding: 16px 24px;
   text-align: center;
   text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -87,7 +94,7 @@ body {
 
 .button-1:hover {
   color: #fff;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
@@ -96,7 +103,5 @@ body {
   box-shadow: none;
   transform: translateY(0);
 }
-
-
 </style>
 

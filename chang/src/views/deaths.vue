@@ -1,14 +1,27 @@
 <template>
   <div>
+    <div class="background">
       <div class="column1">
         <div class="search-bar">
           <form @submit.prevent="fetchData">
-            <input id="search" type="text" placeholder="Enter Month" v-model="month" />
-            <input id="search" type="text" placeholder="Enter Day" v-model="day"/>
+            <input
+              id="search"
+              type="text"
+              placeholder="Enter Month"
+              v-model="month"
+            />
+
+            <input
+              id="search"
+              type="text"
+              placeholder="Enter Day"
+              v-model="day"
+            />
             <button type="submit"><i class="fa fa-search"></i></button>
-            <div class="birth-data">
+
+            <div class="death-data">
               <h2>
-                {{ birthDescription + " was born in " + year }}
+                {{ deathDescription + " died in the year " + year }}
               </h2>
               <button @click="index++">Next</button>
               <button @click="index--">Previous</button>
@@ -17,6 +30,7 @@
         </div>
       </div>
       <div class="column2"></div>
+    </div>
   </div>
 </template>
 
@@ -26,7 +40,7 @@ export default {
     return {
       index: 0,
       year: [],
-      birthDescription: [],
+      deathDescription: [],
       day: null,
       month: null,
     };
@@ -35,19 +49,19 @@ export default {
   // created() {
   //   this.fetchData();
   // },
-  name: "Births",
+  name: "Deaths",
   methods: {
     fetchData: async function () {
       try {
         const response = await fetch(
-          `https://byabbe.se/on-this-day/${this.month}/${this.day}/births.json`
+          `https://byabbe.se/on-this-day/${this.month}/${this.day}/deaths.json`
         );
         const data = await response.json();
-        this.year = data.births[this.index].year;
-        this.birthDescription = data.births[this.index].description;
+        this.year = data.deaths[this.index].year;
+        this.deathDescription = data.deaths[this.index].description;
 
         console.log(data);
-        console.log(this.births);
+        console.log(this.deaths);
       } catch (error) {
         alert(error);
       }
@@ -71,11 +85,11 @@ export default {
   background-blend-mode: screen;
   background-size: cover;
   margin: 0 auto;
-  height: 100%;
+  height: 83vh;
 }
 
 .search-bar input {
-  font-size: 2.28rem;
+  font-size: 2.25rem;
 }
 
 .search-bar button {
@@ -90,9 +104,5 @@ export default {
 
 .search-bar button:hover {
   background: #ccc;
-}
-
-.search-bar {
-  padding: 2rem;
 }
 </style>
