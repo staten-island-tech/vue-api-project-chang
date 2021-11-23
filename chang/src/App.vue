@@ -9,7 +9,7 @@
         <router-link to="/births"
           ><button class="button-1">Births</button>
         </router-link>
-        <router-link to="/about"
+        <router-link to="/deaths"
           ><button class="button-1">Deaths</button>
         </router-link>
         <router-view />
