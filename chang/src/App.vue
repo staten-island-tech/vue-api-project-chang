@@ -13,14 +13,15 @@
         </router-link>
         <router-view />
       </div>
+      <HomePage />
     <div class="content">
-      <!-- <div class="title">
-      <h1> Welcome to Birthday Match! </h1>
-      </div> -->
+     
     </div>
   </div>
 </template>
 <script>
+import HomePage from '@/components/HomePage.vue';
+
 export default {
   data() {
     return {
@@ -30,7 +31,7 @@ export default {
   },
 
   components: {
-
+    HomePage,
   },
 };
 </script>
@@ -45,13 +46,6 @@ body {
   background-color: #2a324b;
 }
 
-.title {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  color: #8288A1;
-  margin: auto;
-}
 
 
 .test {
