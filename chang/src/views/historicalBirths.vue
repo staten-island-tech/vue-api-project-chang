@@ -17,12 +17,8 @@
               placeholder="Enter Day"
               v-model="day"
             />
-            <!-- <div class="birth-data" v-for="birth in births" :key="birth.year">
-              <h2>
-                {{ birth.description + " was born in the year " + birth.year }}
-              </h2>
-              <h2></h2>
-            </div> -->
+            <button type="submit"><i class="fa fa-search"></i></button>
+
             <div class="birth-data">
               <h2>
                 {{ birthDescription + " was born in " + year }}
@@ -30,7 +26,6 @@
               <button @click="index++">Next</button>
               <button @click="index--">Previous</button>
             </div>
-            <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
       </div>
@@ -43,11 +38,11 @@
 export default {
   data() {
     return {
-      index: 1,
-      year: {},
-      birthDescription: {},
-      day: {},
-      month: {},
+      index: 0,
+      year: [],
+      birthDescription: [],
+      day: null,
+      month: null,
     };
   },
 
