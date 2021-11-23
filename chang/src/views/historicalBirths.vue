@@ -49,7 +49,7 @@ export default {
         console.log(data);
         console.log(this.births);
       } catch (error) {
-        alert(error);
+        alert("Invalid input!");
       }
     },
     submitEvent() {
@@ -71,7 +71,7 @@ export default {
   background-blend-mode: screen;
   background-size: cover;
   margin: 0 auto;
-  height: 100%;
+  height: 83vh;
 }
 
 .search-bar input {
