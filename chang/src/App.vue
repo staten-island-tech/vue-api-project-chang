@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       day: null,
-      month: 14,
+      month: null,
     };
   },
 

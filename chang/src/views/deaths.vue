@@ -17,10 +17,12 @@
               placeholder="Enter Day"
               v-model="day"
             />
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button @click="isClicked = !isClicked" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
 
             <div class="death-data">
-              <h2>
+              <h2 v-if="isClicked">
                 {{ deathDescription + " died in the year " + year }}
               </h2>
               <button @click="index++">Next</button>
@@ -43,6 +45,7 @@ export default {
       deathDescription: [],
       day: null,
       month: null,
+      isClicked: false,
     };
   },
 
