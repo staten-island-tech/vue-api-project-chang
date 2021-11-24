@@ -4,28 +4,16 @@
       <div class="column1">
         <div class="search-bar">
           <form @submit.prevent="fetchData">
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Month"
-              v-model="month"
-            />
-
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Day"
-              v-model="day"
-            />
-            <button type="submit"><i class="fa fa-search"></i></button>
-
-            <div class="death-data">
-              <h2>
-                {{ deathDescription + " died in the year " + year }}
-              </h2>
-              <button @click="index++">Next</button>
-              <button @click="index--">Previous</button>
-            </div>
+             <input id="search" type="text" placeholder="Enter Month" v-model="month" />
+             <input id="search" type="text" placeholder="Enter Day" v-model="day"/>
+             <button type="submit"><i class="fa fa-search"></i></button>
+                <div class="death-data">
+                  <h2>
+                    {{ deathDescription + " died in the year " + year }}
+                  </h2>
+                  <button @click="index++">Next</button>
+                  <button @click="index--">Previous</button>
+                </div>
           </form>
         </div>
       </div>
@@ -35,6 +23,7 @@
 </template>
 
 <script>
+// import InputData from "@/components/InputData.vue"
 export default {
   data() {
     return {
@@ -63,7 +52,7 @@ export default {
         console.log(data);
         console.log(this.deaths);
       } catch (error) {
-        alert("Invalid input!");
+        alert(error);
       }
     },
     submitEvent() {
@@ -75,6 +64,9 @@ export default {
       this.month = null;
     },
   },
+  components: {
+    // InputData,
+  }
 };
 </script>
 
