@@ -23,7 +23,7 @@
               {{ birthDescription + " was born in " + year }}
             </h2>
             <button @click="increaseIndex">Next</button>
-            <button @click="decreaseIndex">Previous</button>
+            <button @click="decreaseIndex" v-show="index >= 0">Previous</button>
           </div>
         </form>
       </div>
@@ -39,8 +39,8 @@ export default {
       index: 0,
       year: [],
       birthDescription: [],
-      day: 1,
-      month: 1,
+      day: null,
+      month: null,
       isClicked: false,
     };
   },
@@ -51,6 +51,12 @@ export default {
   name: "Births",
   methods: {
     fetchData: async function () {
+      let todayMonth = new Date();
+      let systemMonth = todayMonth.getMonth() + 1;
+      this.month = systemMonth;
+      let today = new Date();
+      let systemDay = today.getDate();
+      this.day = systemDay;
       try {
         const response = await fetch(
           `https://byabbe.se/on-this-day/${this.month}/${this.day}/births.json`
@@ -58,9 +64,7 @@ export default {
         const data = await response.json();
         this.year = data.births[this.index].year;
         this.birthDescription = data.births[this.index].description;
-        let today = new Date();
-        let systemMonth = today.getMonth() + 1;
-        console.log(systemMonth);
+
         console.log(data);
         console.log(this.birthDescription);
         console.log(this.index);
@@ -75,6 +79,7 @@ export default {
     preventNegativeIndex() {
       if (this.index < 0) {
         alert("you can't do that");
+        this.index = 0;
       }
     },
     increaseIndex() {
