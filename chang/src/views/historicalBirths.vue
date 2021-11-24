@@ -5,8 +5,8 @@
           <form @submit.prevent="fetchData">
             <!-- <InputData /> -->
              <input id="search" type="text" placeholder="Enter Month" v-model="month" />
-        <input id="search" type="text" placeholder="Enter Day" v-model="day"/>
-        <button type="submit"><i class="fa fa-search"></i></button>
+             <input id="search" type="text" placeholder="Enter Day" v-model="day"/>
+             <button type="submit"><i class="fa fa-search"></i></button>
 
             <div class="birth-data">
               <h2>
