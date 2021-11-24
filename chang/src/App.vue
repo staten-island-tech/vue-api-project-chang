@@ -6,30 +6,23 @@
 </template>
 
 <script>
-
-import NavBar from '@/components/NavBar.vue'
+import NavBar from "@/components/NavBar.vue";
 export default {
   data() {
-    return {
-      day: null,
-      month: null,
-    };
+    return {};
   },
 
   components: {
     NavBar,
-  }
+  },
 };
 </script>
 
 
 <style>
-
 body {
   margin: 0 auto;
   background-color: #2a324b;
 }
-
-
 </style>
 

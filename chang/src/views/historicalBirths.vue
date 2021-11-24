@@ -15,13 +15,15 @@
             placeholder="Enter Day"
             v-model="day"
           />
-          <button type="submit"><i class="fa fa-search"></i></button>
+          <button type="submit">
+            <i class="fa fa-search"></i>
+          </button>
           <div class="birth-data">
-            <h2 v-if="isClicked">
+            <h2>
               {{ birthDescription + " was born in " + year }}
             </h2>
-            <button @click="index++">Next</button>
-            <button @click="index--">Previous</button>
+            <button @click="increaseIndex">Next</button>
+            <button @click="decreaseIndex">Previous</button>
           </div>
         </form>
       </div>
@@ -37,15 +39,15 @@ export default {
       index: 0,
       year: [],
       birthDescription: [],
-      day: null,
-      month: null,
+      day: 1,
+      month: 1,
       isClicked: false,
     };
   },
 
-  // created() {
-  //   this.fetchData();
-  // },
+  created() {
+    this.fetchData();
+  },
   name: "Births",
   methods: {
     fetchData: async function () {
@@ -56,20 +58,39 @@ export default {
         const data = await response.json();
         this.year = data.births[this.index].year;
         this.birthDescription = data.births[this.index].description;
-
+        let today = new Date();
+        let systemMonth = today.getMonth() + 1;
+        console.log(systemMonth);
         console.log(data);
-        console.log(this.births);
+        console.log(this.birthDescription);
+        console.log(this.index);
       } catch (error) {
-        alert("Invalid input!");
+        alert(
+          "Looks like you've done something wrong, try not to click Previous if its the first option"
+        );
+        return;
       }
     },
-    submitEvent() {
-      let day = this.day;
-      console.log(day);
-      this.day = null;
-      let month = this.month;
-      console.log(month);
-      this.month = null;
+
+    preventNegativeIndex() {
+      if (this.index < 0) {
+        alert("you can't do that");
+      }
+    },
+    increaseIndex() {
+      this.index++;
+
+      if (this.index > this.index.length) {
+        alert("you can't do that");
+        return;
+      }
+    },
+    decreaseIndex() {
+      this.index--;
+      if (this.index < 0) {
+        alert("you can't do that");
+        return;
+      }
     },
   },
 };
