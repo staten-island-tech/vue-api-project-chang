@@ -18,6 +18,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import("../views/deaths.vue"),
   },
+  {
+    path: "/home",
+    name: "Home",
+    component: () => import("../views/home.vue"),
+  },
 ];
 
 const router = new VueRouter({

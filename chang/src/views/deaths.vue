@@ -66,7 +66,7 @@ export default {
         console.log(data);
         console.log(this.deaths);
       } catch (error) {
-        alert(error);
+        alert("Invalid input!");
       }
     },
     submitEvent() {

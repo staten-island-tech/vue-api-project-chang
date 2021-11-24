@@ -1,38 +1,32 @@
 <template>
   <div>
-    <div class="background">
-      <div class="column1">
-        <div class="search-bar">
-          <form @submit.prevent="fetchData">
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Month"
-              v-model="month"
-            />
-
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Day"
-              v-model="day"
-            />
-            <button @click="isClicked = !isClicked" type="submit">
-              <i class="fa fa-search"></i>
-            </button>
-
-            <div class="birth-data">
-              <h2 v-if="isClicked">
-                {{ birthDescription + " was born in " + year }}
-              </h2>
-              <button @click="index++">Next</button>
-              <button @click="index--">Previous</button>
-            </div>
-          </form>
-        </div>
+    <div class="column1">
+      <div class="search-bar">
+        <form @submit.prevent="fetchData">
+          <input
+            id="search"
+            type="text"
+            placeholder="Enter Month"
+            v-model="month"
+          />
+          <input
+            id="search"
+            type="text"
+            placeholder="Enter Day"
+            v-model="day"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+          <div class="birth-data">
+            <h2 v-if="isClicked">
+              {{ birthDescription + " was born in " + year }}
+            </h2>
+            <button @click="index++">Next</button>
+            <button @click="index--">Previous</button>
+          </div>
+        </form>
       </div>
-      <div class="column2"></div>
     </div>
+    <div class="column2"></div>
   </div>
 </template>
 
@@ -66,7 +60,7 @@ export default {
         console.log(data);
         console.log(this.births);
       } catch (error) {
-        alert(error);
+        alert("Invalid input!");
       }
     },
     submitEvent() {
@@ -92,7 +86,7 @@ export default {
 }
 
 .search-bar input {
-  font-size: 2.25rem;
+  font-size: 2.28rem;
 }
 
 .search-bar button {
@@ -107,5 +101,9 @@ export default {
 
 .search-bar button:hover {
   background: #ccc;
+}
+
+.search-bar {
+  padding: 2rem;
 }
 </style>
