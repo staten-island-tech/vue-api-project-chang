@@ -3,7 +3,7 @@
 
         <input id="search" type="text" placeholder="Enter Month" v-model="month" />
         <input id="search" type="text" placeholder="Enter Day" v-model="day"/>
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit" v-on:click="$emit('click', $fetchData)"> <i class="fa fa-search"></i></button>
 
     </div>
 </template>
