@@ -3,10 +3,10 @@
       <div class="column1">
         <div class="search-bar">
           <form @submit.prevent="fetchData">
-            <!-- <InputData /> -->
-             <input id="search" type="text" placeholder="Enter Month" v-model="month" />
+            <InputData />
+             <!-- <input id="search" type="text" placeholder="Enter Month" v-model="month" />
              <input id="search" type="text" placeholder="Enter Day" v-model="day"/>
-             <button type="submit"><i class="fa fa-search"></i></button>
+             <button type="submit"><i class="fa fa-search"></i></button> -->
 
             <div class="birth-data">
               <h2>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-// import InputData from "@/components/InputData.vue"
+import InputData from "@/components/InputData.vue"
 export default {
   data() {
     return {
@@ -65,7 +65,7 @@ export default {
     },
   },
   components: {
-    // InputData,
+    InputData,
   }
 };
 </script>
