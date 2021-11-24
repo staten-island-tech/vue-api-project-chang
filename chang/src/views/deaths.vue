@@ -4,19 +4,9 @@
       <div class="column1">
         <div class="search-bar">
           <form @submit.prevent="fetchData">
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Month"
-              v-model="month"
-            />
+            <input id="search" type="text" placeholder="Enter Month" v-model="month" />
 
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Day"
-              v-model="day"
-            />
+            <input id="search" type="text" placeholder="Enter Day" v-model="day" />
             <button @click="isClicked = !isClicked" type="submit">
               <i class="fa fa-search"></i>
             </button>
