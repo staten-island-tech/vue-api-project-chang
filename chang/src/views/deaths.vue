@@ -4,16 +4,30 @@
       <div class="column1">
         <div class="search-bar">
           <form @submit.prevent="fetchData">
-             <input id="search" type="text" placeholder="Enter Month" v-model="month" />
-             <input id="search" type="text" placeholder="Enter Day" v-model="day"/>
-             <button type="submit"><i class="fa fa-search"></i></button>
-                <div class="death-data">
-                  <h2>
-                    {{ deathDescription + " died in the year " + year }}
-                  </h2>
-                  <button @click="index++">Next</button>
-                  <button @click="index--">Previous</button>
-                </div>
+            <input
+              id="search"
+              type="text"
+              placeholder="Enter Month"
+              v-model="month"
+            />
+
+            <input
+              id="search"
+              type="text"
+              placeholder="Enter Day"
+              v-model="day"
+            />
+            <button @click="isClicked = !isClicked" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+
+            <div class="death-data">
+              <h2 v-if="isClicked">
+                {{ deathDescription + " died in the year " + year }}
+              </h2>
+              <button @click="increaseIndex">Next</button>
+              <button @click="decreaseIndex">Previous</button>
+            </div>
           </form>
         </div>
       </div>
@@ -32,12 +46,10 @@ export default {
       deathDescription: [],
       day: null,
       month: null,
+      isClicked: false,
     };
   },
 
-  // created() {
-  //   this.fetchData();
-  // },
   name: "Deaths",
   methods: {
     fetchData: async function () {
@@ -50,18 +62,33 @@ export default {
         this.deathDescription = data.deaths[this.index].description;
 
         console.log(data);
-        console.log(this.deaths);
+        console.log(this.deathDescription);
       } catch (error) {
-        alert(error);
+        alert(
+          "Looks like you've done something wrong. Make sure you don't : try to click Previous if its the first option, forget to put a number into one or both fields and try to submit "
+        );
+        return;
       }
     },
-    submitEvent() {
-      let day = this.day;
-      console.log(day);
-      this.day = null;
-      let month = this.month;
-      console.log(month);
-      this.month = null;
+    preventNegativeIndex() {
+      if (this.index < 0) {
+        alert("you can't do that");
+      }
+    },
+    increaseIndex() {
+      this.index++;
+
+      if (this.index > this.index.length) {
+        alert("you can't do that");
+        return;
+      }
+    },
+    decreaseIndex() {
+      this.index--;
+      if (this.index < 0) {
+        alert("you can't do that");
+        return;
+      }
     },
   },
   components: {
