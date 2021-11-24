@@ -25,8 +25,8 @@
               <h2 v-if="isClicked">
                 {{ deathDescription + " died in the year " + year }}
               </h2>
-              <button @click="index++">Next</button>
-              <button @click="index--">Previous</button>
+              <button @click="increaseIndex">Next</button>
+              <button @click="decreaseIndex">Previous</button>
             </div>
           </form>
         </div>
@@ -49,9 +49,6 @@ export default {
     };
   },
 
-  // created() {
-  //   this.fetchData();
-  // },
   name: "Deaths",
   methods: {
     fetchData: async function () {
@@ -64,18 +61,33 @@ export default {
         this.deathDescription = data.deaths[this.index].description;
 
         console.log(data);
-        console.log(this.deaths);
+        console.log(this.deathDescription);
       } catch (error) {
-        alert("Invalid input!");
+        alert(
+          "Looks like you've done something wrong. Make sure you don't : try to click Previous if its the first option, forget to put a number into one or both fields and try to submit "
+        );
+        return;
       }
     },
-    submitEvent() {
-      let day = this.day;
-      console.log(day);
-      this.day = null;
-      let month = this.month;
-      console.log(month);
-      this.month = null;
+    preventNegativeIndex() {
+      if (this.index < 0) {
+        alert("you can't do that");
+      }
+    },
+    increaseIndex() {
+      this.index++;
+
+      if (this.index > this.index.length) {
+        alert("you can't do that");
+        return;
+      }
+    },
+    decreaseIndex() {
+      this.index--;
+      if (this.index < 0) {
+        alert("you can't do that");
+        return;
+      }
     },
   },
 };

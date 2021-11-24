@@ -66,7 +66,7 @@ export default {
         console.log(this.index);
       } catch (error) {
         alert(
-          "Looks like you've done something wrong, try not to click Previous if its the first option"
+          "Looks like you've done something wrong. Make sure you don't : try to click Previous if its the first option, forget to put a number into one or both fields and try to submit "
         );
         return;
       }
