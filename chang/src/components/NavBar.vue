@@ -1,21 +1,21 @@
 <template>
-    <div class="container">
-        <router-link to="/home">
-          <button class="button-1"><i class="fa fa-home"></i></button
-        ></router-link>
-        <router-link to="/births"
-          ><button class="button-1">Births</button>
-        </router-link>
-        <router-link to="/deaths"
-          ><button class="button-1">Deaths</button>
-        </router-link>
-    </div>
+  <div class="container">
+    <router-link to="/home">
+      <button class="button-1"><i class="fa fa-home"></i></button
+    ></router-link>
+    <router-link to="/births"
+      ><button class="button-1">Births</button>
+    </router-link>
+    <router-link to="/deaths"
+      ><button class="button-1">Deaths</button>
+    </router-link>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {
+  name: "NavBar",
+};
 </script>
 
 <style  scoped>
@@ -23,8 +23,8 @@
 @import "https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap";
 
 .container {
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 .button-1 {
   appearance: none;
