@@ -25,8 +25,7 @@
               <h2 v-if="isClicked">
                 {{ deathDescription + " died in the year " + year }}
               </h2>
-              <button @click="increaseIndex">Next</button>
-              <button @click="decreaseIndex">Previous</button>
+              <DataButtons />
             </div>
           </form>
         </div>
@@ -37,6 +36,7 @@
 </template>
 
 <script>
+import DataButtons from "@/components/Buttons.vue";
 export default {
   data() {
     return {
@@ -47,6 +47,9 @@ export default {
       month: null,
       isClicked: false,
     };
+  },
+  components: {
+    DataButtons,
   },
 
   name: "Deaths",
@@ -66,26 +69,6 @@ export default {
         alert(
           "Looks like you've done something wrong. Make sure you don't : try to click Previous if its the first option, forget to put a number into one or both fields and try to submit "
         );
-        return;
-      }
-    },
-    preventNegativeIndex() {
-      if (this.index < 0) {
-        alert("you can't do that");
-      }
-    },
-    increaseIndex() {
-      this.index++;
-
-      if (this.index > this.index.length) {
-        alert("you can't do that");
-        return;
-      }
-    },
-    decreaseIndex() {
-      this.index--;
-      if (this.index < 0) {
-        alert("you can't do that");
         return;
       }
     },
