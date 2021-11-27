@@ -1,15 +1,12 @@
 <template>
   <div>
-    <button @click="increaseIndex" class="btn">Next</button>
-    <button @click="decreaseIndex" class="btn" v-show="index >= 0">
-      Previous
-    </button>
+    <button class="btn">Next</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "DataButtons",
+  name: "NextButton",
   data() {
     return {
       index: 0,
@@ -20,13 +17,6 @@ export default {
       this.index = this.index++;
 
       if (this.index > this.index.length) {
-        alert("you can't do that");
-        return;
-      }
-    },
-    decreaseIndex() {
-      this.index = this.index--;
-      if (this.index < 0) {
         alert("you can't do that");
         return;
       }

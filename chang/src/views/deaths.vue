@@ -13,8 +13,7 @@
               <h2 v-if="isClicked">
                 {{ deathDescription + " died in the year " + year }}
               </h2>
-               <button @click="increaseIndex" class="btn">Next</button>
-              <button @click="decreaseIndex" class="btn" v-show="index >= 0"> Previous </button>
+              <NextButton />
             </div>
           </form>
         </div>
@@ -25,7 +24,7 @@
 </template>
 
 <script>
-
+import NextButton from "@/components/NextButton.vue";
 export default {
   data() {
     return {
@@ -38,7 +37,7 @@ export default {
     };
   },
   components: {
-    
+    NextButton,
   },
 
   name: "Deaths",

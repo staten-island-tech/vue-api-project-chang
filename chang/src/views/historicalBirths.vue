@@ -11,11 +11,7 @@
         </form>
       </div>
       <div class="birth-data">
-      <h2>
-        {{ birthDescription + " was born in " + year }}
-      </h2>
-        <!-- <BirthData /> -->
-        <DataButtons />
+        <NextButton @click.native="increaseIndex" />
       </div>
     </div>
     <div class="column2"></div>
@@ -23,7 +19,7 @@
 </template>
 
 <script>
-import DataButtons from "@/components/Buttons.vue";
+import NextButton from "@/components/NextButton.vue";
 
 export default {
   name: "Births",
@@ -37,40 +33,25 @@ export default {
       isClicked: false,
     };
   },
-
-  created() {
-    this.fetchData();
+  components: {
+    NextButton,
   },
-
   methods: {
-    fetchData: async function () {
-      let todayMonth = new Date();
-      let systemMonth = todayMonth.getMonth() + 1;
-      this.month = systemMonth;
-      let today = new Date();
-      let systemDay = today.getDate();
-      this.day = systemDay;
-      try {
-        const response = await fetch(
-          `https://byabbe.se/on-this-day/${this.month}/${this.day}/births.json`
-        );
-        const data = await response.json();
-        this.year = data.births[this.index].year;
-        this.birthDescription = data.births[this.index].description;
+    increaseIndex() {
+      this.index++;
 
-        console.log(data);
-        console.log(this.birthDescription);
-        console.log(this.index);
-      } catch (error) {
-        alert(
-          "Looks like you've done something wrong. Make sure you don't : try to click Previous if its the first option, forget to put a number into one or both fields and try to submit "
-        );
+      if (this.index > this.index.length) {
+        alert("you can't do that");
         return;
       }
     },
-  },
-  components: {
-    DataButtons,
+    decreaseIndex() {
+      this.index--;
+      if (this.index < 0) {
+        alert("you can't do that");
+        return;
+      }
+    },
   },
 
 };
