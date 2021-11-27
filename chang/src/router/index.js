@@ -30,31 +30,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
-var myMixin;= {
-  return {
-    index: 0,
-  }
-method: {
-  increaseIndex() {
-    this.index = this.index++;
-
-    if (this.index > this.index.length) {
-      alert("you can't do that");
-      return;
-    }
-  },
-  decreaseIndex() {
-    this.index = this.index--;
-    if (this.index < 0) {
-      alert("you can't do that");
-      return;
-    }
-  },
-},
-}
-
-var Component = Vue.extend ({
-  mixins: [myMixin]
-});
 
 export default router;
