@@ -25,7 +25,7 @@
               <h2 v-if="isClicked">
                 {{ deathDescription + " died in the year " + year }}
               </h2>
-              <DataButtons />
+              <NextButton />
             </div>
           </form>
         </div>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import DataButtons from "@/components/Buttons.vue";
+import NextButton from "@/components/NextButton.vue";
 export default {
   data() {
     return {
@@ -49,7 +49,7 @@ export default {
     };
   },
   components: {
-    DataButtons,
+    NextButton,
   },
 
   name: "Deaths",

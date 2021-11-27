@@ -21,8 +21,7 @@
         </form>
       </div>
       <div class="birth-data">
-        <BirthData />
-        <DataButtons />
+        <NextButton @click.native="increaseIndex" />
       </div>
     </div>
     <div class="column2"></div>
@@ -30,14 +29,39 @@
 </template>
 
 <script>
-import DataButtons from "@/components/Buttons.vue";
-import BirthData from "@/components/birthsData.vue";
+import NextButton from "@/components/NextButton.vue";
+
 export default {
   name: "Births",
-
+  data() {
+    return {
+      index: 0,
+      year: [],
+      birthDescription: [],
+      day: null,
+      month: null,
+      isClicked: false,
+    };
+  },
   components: {
-    DataButtons,
-    BirthData,
+    NextButton,
+  },
+  methods: {
+    increaseIndex() {
+      this.index++;
+
+      if (this.index > this.index.length) {
+        alert("you can't do that");
+        return;
+      }
+    },
+    decreaseIndex() {
+      this.index--;
+      if (this.index < 0) {
+        alert("you can't do that");
+        return;
+      }
+    },
   },
 };
 </script>
