@@ -15,9 +15,9 @@ export default {
       index: 0,
     };
   },
-  method: {
+  methods: {
     increaseIndex() {
-      this.index++;
+      this.index = this.index++;
 
       if (this.index > this.index.length) {
         alert("you can't do that");
@@ -25,7 +25,7 @@ export default {
       }
     },
     decreaseIndex() {
-      this.index--;
+      this.index = this.index--;
       if (this.index < 0) {
         alert("you can't do that");
         return;
