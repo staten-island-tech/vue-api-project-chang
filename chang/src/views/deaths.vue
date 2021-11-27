@@ -5,17 +5,16 @@
         <div class="search-bar">
           <form @submit.prevent="fetchData">
             <input id="search" type="text" placeholder="Enter Month" v-model="month" />
-
             <input id="search" type="text" placeholder="Enter Day" v-model="day" />
             <button @click="isClicked = !isClicked" type="submit">
               <i class="fa fa-search"></i>
             </button>
-
             <div class="death-data">
               <h2 v-if="isClicked">
                 {{ deathDescription + " died in the year " + year }}
               </h2>
-              <DataButtons />
+               <button @click="increaseIndex" class="btn">Next</button>
+              <button @click="decreaseIndex" class="btn" v-show="index >= 0"> Previous </button>
             </div>
           </form>
         </div>
@@ -26,7 +25,7 @@
 </template>
 
 <script>
-import DataButtons from "@/components/Buttons.vue";
+
 export default {
   data() {
     return {
@@ -39,7 +38,7 @@ export default {
     };
   },
   components: {
-    DataButtons,
+    
   },
 
   name: "Deaths",
@@ -63,9 +62,23 @@ export default {
       }
     },
   },
-  components: {
-    // InputData,
-  }
+
+ increaseIndex() {
+      this.index = this.index++;
+
+      if (this.index > this.index.length) {
+        alert("you can't do that");
+        return;
+      }
+    },
+    decreaseIndex() {
+      this.index = this.index--;
+      if (this.index < 0) {
+        alert("you can't do that");
+        return;
+      }
+    },
+
 };
 </script>
 
