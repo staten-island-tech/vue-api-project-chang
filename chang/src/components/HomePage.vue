@@ -56,10 +56,10 @@
                <img src="../assets/elsa.png" alt="Elsa From Frozen"> <div class="review-text">Rating: ★★★★★</div> <p>"OMG! I share the same birthday as Mr. Whalen! KEKW" - (REAL) Elsa </p>
            </div>
            <div class="review">
-               <img src="../assets/joji.jpg"> <div class="review-text">Rating: ★★★★★ </div> <p>"Meow Meow Meow Meow Really Good Meow Meow Meow " - Joji </p>
+               <img src="../assets/joji.jpg" alt= "Cat"> <div class="review-text">Rating: ★★★★★ </div> <p>"Meow Meow Meow Meow Really Good Meow Meow Meow " - Joji </p>
            </div>
            <div class="review">
-               <img src="../assets/twin.jpg"> <div class="review-text">Rating: ★★★★★ </div> <p> "Super helpful. I always wondered who else shared the same birthday as me! " - Cole Sprouse </p>
+               <img src="../assets/twin.jpg" alt= "Cole Sprouse from Zack and Cody"> <div class="review-text">Rating: ★★★★★ </div> <p> "Super helpful. I always wondered who else shared the same birthday as me! " - Cole Sprouse </p>
            </div>
        </div>
    </div>
