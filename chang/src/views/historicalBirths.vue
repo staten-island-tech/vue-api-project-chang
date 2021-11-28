@@ -28,4 +28,21 @@ export default {
   margin: 0 auto;
   height: 83vh;
 }
+.search-bar input {
+  font-size: 2.25rem;
+}
+
+.search-bar button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #ccc;
+}
 </style>

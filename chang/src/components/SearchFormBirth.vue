@@ -51,11 +51,12 @@ export default {
         this.birthDescription = apiData.births[this.index].description;
         this.birthData = apiData;
         console.log(apiData);
-
+        console.log(this.birthDescription);
+        console.log(this.year);
         console.log(this.index);
       } catch (error) {
         alert(
-          "Looks like you've done something wrong. Make sure you don't : try to click Previous if its the first option, forget to put a number into one or both fields and try to submit "
+          "Looks like you've done something wrong. Make sure you put a number from 1-12 in the months area and a number from 1-31 depending on the month in the day area."
         );
         return;
       }

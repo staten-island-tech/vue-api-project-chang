@@ -85,4 +85,11 @@ export default {
 </script>
 
 <style>
+.search-bar input {
+  font-size: 2.28rem;
+}
+
+.search-bar {
+  padding: 2rem;
+}
 </style>
