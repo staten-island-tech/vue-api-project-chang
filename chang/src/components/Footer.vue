@@ -1,13 +1,16 @@
 <template>
 <div class="container">
   <div class="footer">
-      <div class="left">
-          <p>{{footer}}</p>
-      </div>
-      <div class="right">
+     
+      <div class="top">
         <a href = "https://github.com/"> <img :src="require('../assets/github.jpeg')"> </a>
          <a href= "https://gmail.com"><img :src="require('../assets/email.jpeg')"></a>
+         <a href= "https://twitter.com"><img :src="require('../assets/twitter.jpeg')"></a>
      </div>
+
+      <div class="bottom">
+          <p>{{footer}}</p>
+      </div>
     </div>
 </div>    
 </template>
@@ -25,30 +28,26 @@ export default {
 
 <style scoped>
 
-.right {
-    float: right;
-    margin-right: 40px;
-    display: flex;
-    justify-content: space-between;
+.top {
+    margin: 0 auto;
 }
 
 img {
     width: 2.5rem;
 }
 .footer {
-    
-    bottom: 0;
-    left: 0;
     width: 100%;
-    height: 4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }
 
 .container {
-    background-color: white;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    background-color: #bcc4dd;
+    color: black;
+    font-family: 'Quicksand', sans-serif;
     width: 100%;
-    height: 4rem;
+    padding: 2rem 0;
 }
 </style>
