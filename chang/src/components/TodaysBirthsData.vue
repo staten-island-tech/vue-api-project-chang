@@ -69,6 +69,9 @@ export default {
 <style scoped>
 .container {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .birth-data{
   background-color: #fbf5e4;
@@ -77,9 +80,16 @@ export default {
   border-radius: 20%;
   text-align: center;
   color: #42507B;
+  margin-top: 3rem;
+  
+}
+
+.birth-data img:hover {
+  transform: scale(1.3);
 }
 
 .birth-data img {
   width: 20rem;
+  transition: transform .2s;
 }
 </style>
