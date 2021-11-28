@@ -1,13 +1,11 @@
 <template>
+
   <div>
     <SearchForm />
-    <div class="column1">
-      <div class="birth-data">
-        <!-- <NextButton @click.native="increaseIndex" /> -->
-      </div>
-    </div>
-    <div class="column2"></div>
   </div>
+
+
+
 </template>
 
 <script>
@@ -50,20 +48,6 @@ export default {
 </script>
 
 <style>
-.background {
-  background-image: linear-gradient(0, #e1e5ee, #767b91),
-    url("../assets/vaporwave.jpg");
-  background-blend-mode: screen;
-  background-size: cover;
-  margin: 0 auto;
-  height: 83vh;
-}
 
-.search-bar input {
-  font-size: 2.28rem;
-}
 
-.search-bar {
-  padding: 2rem;
-}
 </style>
