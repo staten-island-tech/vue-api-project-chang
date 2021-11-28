@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <button class="btn">Next</button>
-  </div>
+  <button class="btn">Next</button>
 </template>
 
 <script>
