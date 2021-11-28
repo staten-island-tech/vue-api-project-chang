@@ -20,10 +20,11 @@
         </div> 
     </div>
    <div id="row">
-       <div class="column">
-           <p>Have you ever wondered who you shared your special day with? With the help of Birthday Match, we can match your birthday with a figure from history. We don't just stop there, we can also find out who passed on your birthday. What are you waiting for? Go ahead and find your birthday twin!</p>
-       </div>
        <h2> Reviews </h2>
+       <!-- <div class="column">
+           <p>Have you ever wondered who you shared your special day with? With the help of Birthday Match, we can match your birthday with a figure from history. We don't just stop there, we can also find out who passed on your birthday. What are you waiting for? Go ahead and find your birthday twin!</p>
+       </div> -->
+       
        <div class="column1">
            <div class="review">
                <img src="../assets/elsa.png" alt="Elsa From Frozen"> <div class="review-text">Rating: ★★★★★</div> <p>"OMG! I share the same birthday as Mr. Whalen! KEKW" - (REAL) Elsa </p>
@@ -36,6 +37,21 @@
            </div>
        </div>
    </div>
+
+    <div class="moreinfo">
+        <div class="flipcard">
+            <div class="flipcard-inner">
+                <div class="flipcard-front">
+                    <img :src="require('../assets/cake.png')">
+                </div>
+                <div class="flipcard-back">
+                    <p>Have you ever wondered who you shared your special day with? With the help of Birthday Match, we can match your birthday with a figure from history. What are you waiting for? Go ahead and find your birthday twin!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
   <div class="footer">
       <p>Contact Us</p>
   </div> 
@@ -60,6 +76,15 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@500&family=Source+Sans+Pro&display=swap');
+
+.flipcard {
+    background-color: transparent;
+    width: 40rem;
+    height: 30rem;
+    perspective: 100rem;
+
+}
+
 #titlescreen{
     position: absolute;
     height: 50vh;
@@ -71,18 +96,14 @@ export default {
 }
 
 .recent-card {
-    
     text-align: center;
 }
 #recent {
     background-color: #7485B8;
     margin: 0 auto;
     padding: 3rem;
-    text-align: center;
     font-family: 'EB Garamond', serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
 
 }
 
