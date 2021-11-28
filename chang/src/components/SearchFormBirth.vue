@@ -9,7 +9,7 @@
       <input
         id="search"
         type="text"
-        placeholder="Enter Month"
+        placeholder="Enter Month Using Numbers 1-10 Or The Word"
         v-model="month"
       />
       <input id="search" type="text" placeholder="Enter Day" v-model="day" />
@@ -20,7 +20,7 @@
     <SearchedBirthData :info="birthData" :arrayIndex="this.index" />
     <NextButton
       @click.native="increaseIndex"
-      v-show="this.index < this.apiLength"
+      v-show="this.index < this.apiLength - 1"
     />
     <PreviousButton @click.native="decreaseIndex" v-show="this.index > 0" />
   </div>
@@ -175,6 +175,7 @@ export default {
 <style>
 .search-bar input {
   font-size: 2.28rem;
+  width: 50rem;
 }
 
 .search-bar {

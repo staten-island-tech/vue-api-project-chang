@@ -28,6 +28,7 @@ export default {
 
 .search-bar input {
   font-size: 2.25rem;
+  width: 50rem;
 }
 
 .search-bar button {
