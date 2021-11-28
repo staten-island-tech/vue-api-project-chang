@@ -12,10 +12,16 @@
         placeholder="Enter Month Using Numbers 1-10 Or The Word"
         v-model="month"
       />
-      <input id="search" type="text" placeholder="Enter Day" v-model="day" />
+
+      <input id="search" 
+      type="text" 
+      placeholder="Enter Day" 
+      v-model="day" />
+
       <button type="submit">
-        <i class="fa fa-search"></i>
+      <i class="fa fa-search"></i>
       </button>
+
     </form>
     <SearchedBirthData :info="birthData" :arrayIndex="this.index" />
     <NextButton
@@ -173,12 +179,28 @@ export default {
 </script>
 
 <style>
-.search-bar input {
-  font-size: 2.28rem;
-  width: 50rem;
+
+input {
+  display: block;
+  width: 50%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid  #eee;
+  transition: .5s border-color;
+  height: 2rem;
+  font-size: 1.5rem;
+
 }
 
-.search-bar {
-  padding: 2rem;
+input:hover {
+  border: 2px solid #aaa;
+}
+
+input:focus {
+  border: 2px solid black;
+}
+*:focus {
+  outline:none;
 }
 </style>

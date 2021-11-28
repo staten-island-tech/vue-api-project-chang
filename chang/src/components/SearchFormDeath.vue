@@ -171,12 +171,5 @@ export default {
 </script>
 
 <style>
-.search-bar input {
-  font-size: 2.28rem;
-  width: 50rem;
-}
 
-.search-bar {
-  padding: 2rem;
-}
 </style>
