@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <NavBar> </NavBar>
+
     <router-view />
   </div>
 </template>
@@ -14,6 +15,7 @@ export default {
 
   components: {
     NavBar,
+ 
   },
 };
 </script>
