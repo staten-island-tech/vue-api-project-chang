@@ -12,13 +12,21 @@
         </div>
     </div>
 
-   <div class="row">
+
+    <div id="recent"> 
+     <h2>Special Shoutout</h2>  
+        <div class="recent-card">
+             <TodaysBirthData />
+        </div> 
+    </div>
+   <div id="row">
        <div class="column">
            <p>Have you ever wondered who you shared your special day with? With the help of Birthday Match, we can match your birthday with a figure from history. We don't just stop there, we can also find out who passed on your birthday. What are you waiting for? Go ahead and find your birthday twin!</p>
        </div>
+       <h2> Reviews </h2>
        <div class="column1">
            <div class="review">
-               <img src="../assets/elsa.png" alt="Elsa From Frozen"> <div class="review-text">Rating: ★★★★★</div> <p>"OMG! I share the same birthday with Mr. Whalen! KEKW" - (REAL) Elsa </p>
+               <img src="../assets/elsa.png" alt="Elsa From Frozen"> <div class="review-text">Rating: ★★★★★</div> <p>"OMG! I share the same birthday as Mr. Whalen! KEKW" - (REAL) Elsa </p>
            </div>
            <div class="review">
                <img src="../assets/sova.png"> <div class="review-text">Rating: ★★★★★ </div>
@@ -36,31 +44,60 @@
 </template>
 
 <script>
+import TodaysBirthData from "@/components/TodaysBirthsData.vue";
 export default {
     data() {
         return{
             title: 'Welcome to Birthday Match',
             info: 'Find your match today. Click above to get started!'
         }
+    },
+    components: {
+        TodaysBirthData
     }
 }
 </script>
 
 <style scoped>
-
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@500&family=Source+Sans+Pro&display=swap');
 #titlescreen{
     position: absolute;
     height: 50vh;
     top: 35vh;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     left: 4rem;
+
 }
+
+.recent-card {
+    
+    text-align: center;
+}
+#recent {
+    background-color: #7485B8;
+    margin: 0 auto;
+    padding: 3rem;
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#recent h2 {
+    color: #404f7a;
+}
+
 
 .infographic {
     font-size: 2rem;
+    margin-top: -1.5rem;
+    color: rgb(60, 66, 95);
+    font-family: 'EB Garamond', serif;
+
+
 }
 #homeimg {
     position: relative;
@@ -72,7 +109,7 @@ export default {
     background-image: linear-gradient(to left,#e1e5ee 0%, #767b91 0%), url('../assets/background.jpg');
     background-blend-mode: screen;
 }
-.row {
+#row {
     display: flex;
     flex-direction: column;
     width: 65%;
