@@ -203,4 +203,8 @@ input:focus {
 *:focus {
   outline:none;
 }
+
+.search-bar {
+  background-color: #FBF5E4;
+}
 </style>
