@@ -7,21 +7,6 @@
 <script>
 export default {
   name: "NextButton",
-  data() {
-    return {
-      index: 0,
-    };
-  },
-  methods: {
-    increaseIndex() {
-      this.index++;
-
-      if (this.index > this.index.length) {
-        alert("you can't do that");
-        return;
-      }
-    },
-  },
 };
 </script>
 
