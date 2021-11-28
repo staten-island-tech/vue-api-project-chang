@@ -4,23 +4,11 @@
       <div class="column1">
         <div class="search-bar">
           <form @submit.prevent="fetchData">
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Month"
-              v-model="month"
-            />
-
-            <input
-              id="search"
-              type="text"
-              placeholder="Enter Day"
-              v-model="day"
-            />
+            <input id="search" type="text" placeholder="Enter Month" v-model="month" />
+            <input id="search" type="text" placeholder="Enter Day" v-model="day" />
             <button @click="isClicked = !isClicked" type="submit">
               <i class="fa fa-search"></i>
             </button>
-
             <div class="death-data">
               <h2 v-if="isClicked">
                 {{ deathDescription + " died in the year " + year }}
@@ -73,6 +61,23 @@ export default {
       }
     },
   },
+
+ increaseIndex() {
+      this.index = this.index++;
+
+      if (this.index > this.index.length) {
+        alert("you can't do that");
+        return;
+      }
+    },
+    decreaseIndex() {
+      this.index = this.index--;
+      if (this.index < 0) {
+        alert("you can't do that");
+        return;
+      }
+    },
+
 };
 </script>
 

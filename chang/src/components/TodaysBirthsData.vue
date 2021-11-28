@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <div class="birth-data">
+      <img :src="require('../assets/cake.png')" alt="Slice of cake"/>
       <h2>
         {{
           "Today, on " +
@@ -65,5 +66,30 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.birth-data{
+  background-color: #fbf5e4;
+  padding: 3rem;
+  width: 30%;
+  border-radius: 20%;
+  text-align: center;
+  color: #42507B;
+  margin-top: 3rem;
+  
+}
+
+.birth-data img:hover {
+  transform: scale(1.3);
+}
+
+.birth-data img {
+  width: 20rem;
+  transition: transform .2s;
+}
 </style>

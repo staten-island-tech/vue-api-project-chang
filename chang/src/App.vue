@@ -22,7 +22,7 @@ export default {
 <style>
 body {
   margin: 0 auto;
-  background-color: #2a324b;
+  background-color: #42507B;
 }
 </style>
 
