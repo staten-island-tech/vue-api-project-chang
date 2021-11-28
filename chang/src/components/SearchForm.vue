@@ -7,10 +7,17 @@
         placeholder="Enter Month"
         v-model="month"
       />
-      <input id="search" type="text" placeholder="Enter Day" v-model="day" />
+
+      <input 
+      id="search" 
+      type="text" 
+      placeholder="Enter Day" 
+      v-model="day" />
+
       <button type="submit">
         <i class="fa fa-search"></i>
       </button>
+
     </form>
     <SearchedBirthData :info="birthData" :arrayIndex="this.index" />
     <NextButton @click.native="increaseIndex" />
@@ -81,4 +88,11 @@ export default {
 </script>
 
 <style>
+
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
 </style>
