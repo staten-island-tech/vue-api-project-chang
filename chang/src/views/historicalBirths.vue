@@ -1,17 +1,9 @@
 <template>
   <div>
+    <SearchForm />
     <div class="column1">
-      <div class="search-bar">
-        <form @submit.prevent="fetchData">
-          <input id="search" type="text" placeholder="Enter Month" v-model="month" />
-          <input id="search" type="text" placeholder="Enter Day" v-model="day" />
-          <button type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </form>
-      </div>
       <div class="birth-data">
-        <NextButton @click.native="increaseIndex" />
+        <!-- <NextButton @click.native="increaseIndex" /> -->
       </div>
     </div>
     <div class="column2"></div>
@@ -19,7 +11,7 @@
 </template>
 
 <script>
-import NextButton from "@/components/NextButton.vue";
+import SearchForm from "@/components/SearchForm.vue";
 
 export default {
   name: "Births",
@@ -34,7 +26,7 @@ export default {
     };
   },
   components: {
-    NextButton,
+    SearchForm,
   },
   methods: {
     increaseIndex() {
