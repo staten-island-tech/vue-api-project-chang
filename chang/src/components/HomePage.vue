@@ -56,10 +56,10 @@
                <img src="../assets/elsa.png" alt="Elsa From Frozen"> <div class="review-text">Rating: ★★★★★</div> <p>"OMG! I share the same birthday as Mr. Whalen! KEKW" - (REAL) Elsa </p>
            </div>
            <div class="review">
-               <img src="../assets/sova.png"> <div class="review-text">Rating: ★★★★★ </div>
+               <img src="../assets/joji.jpg"> <div class="review-text">Rating: ★★★★★ </div> <p>"Meow Meow Meow Meow Really Good Meow Meow Meow " - Joji </p>
            </div>
            <div class="review">
-               <img src="../assets/reyna.png"> <div class="review-text">Rating: ★★★★★ </div>
+               <img src="../assets/twin.jpg"> <div class="review-text">Rating: ★★★★★ </div> <p> "Super helpful. I always wondered who else shared the same birthday as me! " - Cole Sprouse </p>
            </div>
        </div>
    </div>
@@ -253,8 +253,8 @@ h2 {
     opacity: 0;
     visibility: hidden;
     transition: visibility 0s, opacity 0.5s linear;
-    bottom: 8rem;
-    right: 3rem;;
+    bottom: 10rem;
+    right: 6rem;;
 }
 
 .review:hover {

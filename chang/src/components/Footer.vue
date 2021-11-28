@@ -20,7 +20,7 @@ export default {
     data() {
     return{
     name: "Footer",
-    footer:  "contact us"
+    footer:  "contact us: muhammad chaudhry and julissa liang"
     }
     }
 }
