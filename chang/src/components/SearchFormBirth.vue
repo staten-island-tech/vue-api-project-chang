@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="search-bar">
     <form @submit.prevent="fetchData">
       <input
         id="search"
@@ -51,9 +51,8 @@ export default {
         this.birthDescription = apiData.births[this.index].description;
         this.birthData = apiData;
         console.log(apiData);
-        console.log(this.birthDescription);
+
         console.log(this.index);
-        console.log(this.year);
       } catch (error) {
         alert(
           "Looks like you've done something wrong. Make sure you don't : try to click Previous if its the first option, forget to put a number into one or both fields and try to submit "
@@ -65,14 +64,18 @@ export default {
       this.index++;
 
       if (this.index > this.index.length) {
-        alert("you can't do that");
+        alert(
+          "you can't do that because there is nothing next, the only way is backwards"
+        );
         return;
       }
     },
     decreaseIndex() {
       this.index--;
       if (this.index < 0) {
-        alert("you can't do that");
+        alert(
+          "you can't do that because there is nothing to go back to, the only way is forward"
+        );
         return;
       }
     },
@@ -81,4 +84,11 @@ export default {
 </script>
 
 <style>
+.search-bar input {
+  font-size: 2.28rem;
+}
+
+.search-bar {
+  padding: 2rem;
+}
 </style>
