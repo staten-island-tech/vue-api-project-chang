@@ -13,8 +13,11 @@
       </button>
     </form>
     <SearchedBirthData :info="birthData" :arrayIndex="this.index" />
-    <NextButton @click.native="increaseIndex" />
-    <PreviousButton @click.native="decreaseIndex" v-show="this.index >= 0" />
+    <NextButton
+      @click.native="increaseIndex"
+      v-show="this.index < this.apiLength"
+    />
+    <PreviousButton @click.native="decreaseIndex" v-show="this.index > 0" />
   </div>
 </template>
 
@@ -38,6 +41,7 @@ export default {
       day: null,
       month: null,
       isClicked: false,
+      apiLength: null,
     };
   },
   methods: {
@@ -50,10 +54,12 @@ export default {
         this.year = apiData.births[this.index].year;
         this.birthDescription = apiData.births[this.index].description;
         this.birthData = apiData;
+        this.apiLength = apiData.births.length;
         console.log(apiData);
         console.log(this.birthDescription);
         console.log(this.year);
         console.log(this.index);
+        console.log(apiData.births.length);
       } catch (error) {
         alert(
           "Looks like you've done something wrong. Make sure you put a number from 1-12 in the months area and a number from 1-31 depending on the month in the day area."

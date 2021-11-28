@@ -13,8 +13,11 @@
       </button>
     </form>
     <SearchedDeathData :info="deathData" :arrayIndex="this.index" />
-    <NextButton @click.native="increaseIndex" />
-    <PreviousButton @click.native="decreaseIndex" v-show="this.index >= 0" />
+    <NextButton
+      @click.native="increaseIndex"
+      v-show="this.index < this.apiLength"
+    />
+    <PreviousButton @click.native="decreaseIndex" v-show="this.index > 0" />
   </div>
 </template>
 
@@ -38,6 +41,7 @@ export default {
       day: null,
       month: null,
       isClicked: false,
+      apiLength: null,
     };
   },
   methods: {
@@ -50,6 +54,7 @@ export default {
         this.year = apiData.deaths[this.index].year;
         this.deathDescription = apiData.deaths[this.index].description;
         this.deathData = apiData;
+        this.apiLength = apiData.deaths.length;
         console.log(apiData);
         console.log(this.deathDescription);
         console.log(this.year);
