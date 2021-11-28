@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="birth-data">
+    <div class="death-data">
       <h2>
         {{
-          info.births[arrayIndex].description +
-          " was born in the year " +
-          info.births[arrayIndex].year
+          info.deaths[arrayIndex].description +
+          " died in the year " +
+          info.deaths[arrayIndex].year
         }}
       </h2>
     </div>

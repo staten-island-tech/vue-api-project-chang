@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <SearchForm />
+    <SearchFormBirth />
   </div>
 
 
@@ -9,41 +9,13 @@
 </template>
 
 <script>
-import SearchForm from "@/components/SearchForm.vue";
+import SearchFormBirth from "@/components/SearchFormBirth.vue";
 
 export default {
   name: "Births",
-  data() {
-    return {
-      index: 0,
-      year: [],
-      birthDescription: [],
-      day: null,
-      month: null,
-      isClicked: false,
-    };
-  },
   components: {
-    SearchForm,
+    SearchFormBirth,
   },
-  methods: {
-    increaseIndex() {
-      this.index++;
-
-      if (this.index > this.index.length) {
-        alert("you can't do that");
-        return;
-      }
-    },
-    decreaseIndex() {
-      this.index--;
-      if (this.index < 0) {
-        alert("you can't do that");
-        return;
-      }
-    },
-  },
-
 };
 </script>
 
