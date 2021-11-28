@@ -1,10 +1,6 @@
 <template>
   <div>
     <SearchFormBirth />
-    <div class="column1">
-      <div class="birth-data"></div>
-    </div>
-    <div class="column2"></div>
   </div>
 </template>
 
