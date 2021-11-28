@@ -12,18 +12,44 @@
         </div>
     </div>
 
+    <div class="moreinfo">
+        <div class="info">
+        <h2>How Does This Work?</h2>
+        <p>Curiosity never killed the cat. We can do it all. </p>
+        </div>
+        <div class="cards">
+        <div class="flipcard">
+            <div class="flipcard-inner">
+                <div class="flipcard-front">
+                    <img :src="require('../assets/birthday.png')">
+                </div>
+                <div class="flipcard-back">
+                    <p>Have you ever wondered who you shared your special day with? With the help of Birthday Match, we can match your birthday with a figure from history. What are you waiting for? Go ahead and find your birthday twin!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flipcard">
+            <div class="flipcard-inner">
+                <div class="flipcard-front">
+                    <img :src="require('../assets/death.png')">
+                </div>
+                <div class="flipcard-back">
+                    <p>We don't just stop there, we can also find out who passed on your birthday. It is like they say, "When one legend dies, another is born." What are you waiting for? Go ahead and find out!</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <div id="recent"> 
-     <h2>Special Shoutout</h2>  
+     <h2>Daily Special Shoutout</h2>  
         <div class="recent-card">
              <TodaysBirthData />
         </div> 
     </div>
    <div id="row">
        <h2> Reviews </h2>
-       <!-- <div class="column">
-           <p>Have you ever wondered who you shared your special day with? With the help of Birthday Match, we can match your birthday with a figure from history. We don't just stop there, we can also find out who passed on your birthday. What are you waiting for? Go ahead and find your birthday twin!</p>
-       </div> -->
        
        <div class="column1">
            <div class="review">
@@ -38,29 +64,15 @@
        </div>
    </div>
 
-    <div class="moreinfo">
-        <div class="flipcard">
-            <div class="flipcard-inner">
-                <div class="flipcard-front">
-                    <img :src="require('../assets/cake.png')">
-                </div>
-                <div class="flipcard-back">
-                    <p>Have you ever wondered who you shared your special day with? With the help of Birthday Match, we can match your birthday with a figure from history. What are you waiting for? Go ahead and find your birthday twin!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-  <div class="footer">
-      <p>Contact Us</p>
-  </div> 
+<Footer />
 </div>
+ 
 
 </template>
 
 <script>
 import TodaysBirthData from "@/components/TodaysBirthsData.vue";
+import Footer from "@/components/Footer.vue";
 export default {
     data() {
         return{
@@ -69,7 +81,8 @@ export default {
         }
     },
     components: {
-        TodaysBirthData
+        TodaysBirthData,
+        Footer
     }
 }
 </script>
@@ -77,12 +90,67 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@500&family=Source+Sans+Pro&display=swap');
 
+.info p {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #E1E5EE;
+    font-family: 'EB Garamond', serif;
+    margin:0 auto;
+}
+.moreinfo {
+    padding: 3.5rem;
+}
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.flipcard img {
+    width: 25rem;
+}
 .flipcard {
     background-color: transparent;
-    width: 40rem;
-    height: 30rem;
+    width: 30rem;
+    height: 18rem;
     perspective: 100rem;
+    padding: 2rem;
 
+}
+
+.flipcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flipcard:hover .flipcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flipcard-front, .flipcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flipcard-front {
+  background-color: #E1E5EE;
+  color: black;
+}
+
+.flipcard-back {
+  background-color: #f6e2a8;;
+  color: #7485B8;
+  margin: 0 auto;
+  transform: rotateY(180deg);
+ font-family: 'EB Garamond', serif;
+ text-align: center;
+ font-size: 1.7rem;
 }
 
 #titlescreen{
@@ -133,7 +201,7 @@ export default {
 #row {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 75%;
     text-align: center;
     margin: 0 auto;
     padding: 2rem;
@@ -154,6 +222,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 10rem;
 }
 h2 {
   font-family: 'Quicksand', sans-serif;
@@ -163,9 +232,7 @@ h2 {
   margin: auto;
 }
 
-.footer {
-    background-color:black;
-}
+
 .review img {
     width: 14rem;
 }
@@ -174,7 +241,7 @@ h2 {
     font-size: 1.3rem;
     position: relative;
     background-color: #C7CCDB;
-    padding: 2rem .8rem;
+    padding: 2.5rem .5rem;
     border-radius: 10%;
     color: #2A324B;
 }
@@ -201,4 +268,6 @@ h2 {
     padding: 8px 15px;
    
 }
+
+
 </style>
