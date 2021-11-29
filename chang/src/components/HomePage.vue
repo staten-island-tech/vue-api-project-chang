@@ -228,7 +228,7 @@ h2 {
   font-family: 'Quicksand', sans-serif;
   font-size: 3.5rem;
   text-align: center;
-  color: rgb(103, 116, 167);
+  color: #F3548C;
   margin: auto;
 }
 
