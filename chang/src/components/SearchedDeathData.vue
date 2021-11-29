@@ -25,10 +25,22 @@ export default {
 </script>
 
 <style scoped>
-.birth-data{
+
+.birth-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Quicksand', sans-serif;
+  width: 80%;
+  text-align: center;
+  border-radius: 3rem;
+  padding: 1rem;
+  margin: 3rem;
   background-color:#f1acc4;
   color: #87012f;
 }
+
+
 
 
 </style>
