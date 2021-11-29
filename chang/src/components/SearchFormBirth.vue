@@ -1,15 +1,20 @@
 <template>
+<div class="containthis">
   <div class="search-bar">
+
+    <img :src="require('../assets/logo.png')">
     <form
       @submit.prevent="
         switchStatement();
         fetchData();
       "
     >
+    <div class="inputbars">
+      <p> Type in your birthday month in words or numerical format (1-12). Type in your birthday date. </p>
       <input
         id="search"
         type="text"
-        placeholder="Enter Month Using Numbers 1-10 Or The Word"
+        placeholder="Enter Month"
         v-model="month"
       />
 
@@ -17,19 +22,23 @@
       type="text" 
       placeholder="Enter Day" 
       v-model="day" />
-
-      <button type="submit">
+    </div>
+    
+      <button type="submit" class="bingbong">
       <i class="fa fa-search"></i>
       </button>
 
     </form>
     <SearchedBirthData :info="birthData" :arrayIndex="this.index" />
-    <NextButton
+    <div class="prevnext">
+    <PreviousButton @click.native="decreaseIndex" v-show="this.index > 0" />
+      <NextButton
       @click.native="increaseIndex"
       v-show="this.index < this.apiLength - 1"
     />
-    <PreviousButton @click.native="decreaseIndex" v-show="this.index > 0" />
+    </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -179,7 +188,26 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@500&family=Source+Sans+Pro&display=swap');
+.search-bar p {
+  font-size: 1.2rem;
+  font-family: 'EB Garamond', sans-serif;
+  font-weight: bold;
+  color: #8b6d0f;
+  margin: 0 auto;
 
+}
+.prevnext {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.search-bar img {
+  width: 20rem;
+  float: right;
+  margin: -1rem 10px;
+}
 input {
   display: block;
   width: 50%;
@@ -192,7 +220,12 @@ input {
   font-size: 1.5rem;
 
 }
-
+::placeholder {
+  opacity: 0.5;
+}
+.inputbars {
+  margin: 30px;
+}
 input:hover {
   border: 2px solid #aaa;
 }
@@ -205,6 +238,28 @@ input:focus {
 }
 
 .search-bar {
-  background-color: #FBF5E4;
+  margin: 0 auto;
+  background-color: #efcf6c;
+  width: 40%;
+  padding: 4rem;
+  border-radius: 3rem;
+  text-align: center;
+}
+
+.containthis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bingbong{
+  padding: 5px 2rem;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  border: none;
+}
+
+.bingbong:hover {
+  background-color: #d0d0d0;
 }
 </style>
