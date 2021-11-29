@@ -3,9 +3,9 @@
   <div class="footer">
      
       <div class="top">
-        <a href = "https://github.com/"> <img :src="require('../assets/github.jpeg')"> </a>
-         <a href= "https://gmail.com"><img :src="require('../assets/email.jpeg')"></a>
-         <a href= "https://twitter.com"><img :src="require('../assets/twitter.jpeg')"></a>
+        <a href = "https://github.com/"> <img :src="require('../assets/github.jpeg')" alt="Github"> </a>
+         <a href= "https://gmail.com"><img :src="require('../assets/email.jpeg')" alt="Email"></a>
+         <a href= "https://twitter.com"><img :src="require('../assets/twitter.jpeg')" alt="Twitter"></a>
      </div>
 
       <div class="bottom">
@@ -20,7 +20,7 @@ export default {
     data() {
     return{
     name: "Footer",
-    footer:  "contact us"
+    footer:  "contact us: muhammad chaudhry and julissa liang"
     }
     }
 }

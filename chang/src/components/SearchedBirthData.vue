@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="birth-data">
+      <img :src ="require('../assets/match.png')">
       <h2>
         {{
           info.births[arrayIndex].description +
@@ -24,4 +25,20 @@ export default {
 </script>
 
 <style>
+
+.birth-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7e7b6;
+  font-family: 'Quicksand', sans-serif;
+  color: #a17d12;
+  width: 80%;
+  text-align: center;
+  border-radius: 3rem;
+  padding: 1rem;
+  margin: 3rem;
+}
+
+
 </style>

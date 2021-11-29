@@ -70,4 +70,6 @@ export default {
   box-shadow: none;
   transform: translateY(0);
 }
+
+
 </style>
