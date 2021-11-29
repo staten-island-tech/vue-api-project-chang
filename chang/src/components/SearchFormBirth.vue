@@ -2,7 +2,7 @@
 <div class="containthis">
   <div class="search-bar">
 
-    <img :src="require('../assets/logo.png')">
+    <img :src="require('../assets/logo.png')" alt="Logo Birthday Match">
     <form
       @submit.prevent="
         switchStatement();
@@ -187,7 +187,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@500&family=Source+Sans+Pro&display=swap');
 .search-bar p {
   font-size: 1.2rem;
