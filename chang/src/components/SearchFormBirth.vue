@@ -45,12 +45,14 @@
 import SearchedBirthData from "@/components/SearchedBirthData.vue";
 import NextButton from "@/components/NextButton.vue";
 import PreviousButton from "@/components/PreviousButton.vue";
+
 export default {
   name: "SearchForm",
   components: {
     SearchedBirthData,
     NextButton,
     PreviousButton,
+  
   },
   data() {
     return {

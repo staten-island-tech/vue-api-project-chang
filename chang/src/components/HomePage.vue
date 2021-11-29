@@ -139,7 +139,7 @@ export default {
   backface-visibility: hidden;
 }
 .flipcard-front {
-  background-color: #E1E5EE;
+  background-color: #99a7d1;
   color: black;
 }
 
