@@ -2,7 +2,7 @@
 <div class="containthis">
   <div class="search-bar">
 
-    <img :src="require('../assets/logo.png')">
+    <img :src="require('../assets/logoinverted.png')" alt="Logo Birthday Match">
     <form
       @submit.prevent="
         switchStatement();
@@ -184,6 +184,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.search-bar {
+  background-color: #d63970;
+}
 
+.search-bar p {
+  color: #87012f;
+}
 </style>
