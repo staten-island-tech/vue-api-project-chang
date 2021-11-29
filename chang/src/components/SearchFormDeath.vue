@@ -38,18 +38,21 @@
     </div>
   </div>
 </div>
+
 </template>
 
 <script>
 import SearchedDeathData from "@/components/SearchedDeathData.vue";
 import NextButton from "@/components/NextButton.vue";
 import PreviousButton from "@/components/PreviousButton.vue";
+
 export default {
   name: "SearchForm",
   components: {
     SearchedDeathData,
     NextButton,
     PreviousButton,
+   
   },
   data() {
     return {
