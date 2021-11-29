@@ -1,5 +1,5 @@
 <template>
-  <button class="btn">Next</button>
+  <button class="btn">&#8250;</button>
 </template>
 
 <script>
@@ -10,12 +10,11 @@ export default {
 
 <style>
 .btn {
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
+  padding: 3px 16px;
   background: #ddd;
   font-size: 2rem;
   border: none;
+  border-radius: 50%;
   cursor: pointer;
 }
 .btn:hover {

@@ -1,9 +1,12 @@
-<template>
-  <div class="container">
-    <NavBar> </NavBar>
+<template lang="en">
 
+  <div class="container">
+    <nav>
+    <NavBar /> 
+    </nav>
     <router-view />
   </div>
+
 </template>
 
 <script>
@@ -24,7 +27,7 @@ export default {
 <style>
 body {
   margin: 0 auto;
-  background-color: #42507B;
+  background-color: #41528B;
 }
 </style>
 

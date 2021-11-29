@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="death-data">
+    <div class="birth-data">
+      <img :src ="require('../assets/uhoh.png')" alt="Uh oh!">
       <h2>
         {{
           info.deaths[arrayIndex].description +
@@ -13,7 +14,9 @@
 </template>
 
 <script>
+
 export default {
+  
   props: ["info", "arrayIndex"],
   data() {
     return {
@@ -23,5 +26,28 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.birth-data img {
+  width: 30rem;
+}
+.birth-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Quicksand', sans-serif;
+  width: 80%;
+  text-align: center;
+  border-radius: 3rem;
+  padding: 1rem;
+  margin: 3rem;
+  height: 40vh;
+  background-color:#f1acc4;
+  color: #87012f;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+
 </style>
