@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="birth-data">
-      <img :src ="require('../assets/match.png')" alt="Its a Match!">
+      <img :src="require('../assets/match.png')" alt="Its a Match!" />
       <h1>
         {{
           info.births[arrayIndex].description +
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-
 export default {
   props: ["info", "arrayIndex"],
   data() {
@@ -26,7 +25,6 @@ export default {
 </script>
 
 <style scoped>
-
 .birth-data img {
   width: 28rem;
   margin: 0 auto;
@@ -36,7 +34,7 @@ export default {
   flex-direction: column;
   align-items: center;
   background-color: #f7e7b6;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #a17d12;
   width: 80%;
   height: 40vh;
@@ -47,6 +45,6 @@ export default {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2rem;
 }
 </style>
