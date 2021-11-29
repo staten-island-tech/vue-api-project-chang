@@ -1,29 +1,43 @@
 <template>
+<div class="containthis">
   <div class="search-bar">
+
+    <img :src="require('../assets/logo.png')">
     <form
       @submit.prevent="
         switchStatement();
         fetchData();
       "
     >
+    <div class="inputbars">
+      <p> Type in your birthday month in words or numerical format (1-12). Type in your birthday date. </p>
       <input
         id="search"
         type="text"
-        placeholder="Enter Month Using Numbers 1-10 Or The Word"
+        placeholder="Enter Month"
         v-model="month"
       />
-      <input id="search" type="text" placeholder="Enter Day" v-model="day" />
-      <button type="submit">
+
+      <input id="search" 
+      type="text" 
+      placeholder="Enter Day" 
+      v-model="day" />
+    </div>
+
+      <button type="submit" class="bingbong">
         <i class="fa fa-search"></i>
       </button>
     </form>
     <SearchedDeathData :info="deathData" :arrayIndex="this.index" />
-    <NextButton
+    <div class="prevnext">
+    <PreviousButton @click.native="decreaseIndex" v-show="this.index > 0" />
+      <NextButton
       @click.native="increaseIndex"
       v-show="this.index < this.apiLength - 1"
     />
-    <PreviousButton @click.native="decreaseIndex" v-show="this.index > 0" />
+    </div>
   </div>
+</div>
 </template>
 
 <script>
