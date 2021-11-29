@@ -2,13 +2,13 @@
   <div>
     <div class="birth-data">
       <img :src ="require('../assets/match.png')" alt="Its a Match!">
-      <h2>
+      <h1>
         {{
           info.births[arrayIndex].description +
           " was born in the year " +
           info.births[arrayIndex].year
         }}
-      </h2>
+      </h1>
     </div>
   </div>
 </template>
@@ -46,5 +46,7 @@ export default {
   margin: 3rem;
 }
 
-
+h1 {
+  font-size: 3.5rem;
+}
 </style>

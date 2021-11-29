@@ -16,15 +16,17 @@
         type="text"
         placeholder="Enter Month"
         v-model="month"
+        aria-label="Insert your birth month."
       />
 
       <input id="search" 
       type="text" 
       placeholder="Enter Day" 
-      v-model="day" />
+      v-model="day" 
+      aria-label="Insert your birth day."/>
     </div>
 
-      <button type="submit" class="bingbong">
+      <button type="submit" class="bingbong" aria-label="Submit your birthday.">
         <i class="fa fa-search"></i>
       </button>
     </form>
@@ -194,7 +196,7 @@ export default {
   font-size: 1.2rem;
   font-family: 'EB Garamond', sans-serif;
   font-weight: bold;
-  color: #87012f;
+  color: #f6c9d9;
   width: 32rem;
 
 }

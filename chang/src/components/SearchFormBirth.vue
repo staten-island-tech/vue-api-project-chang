@@ -15,16 +15,16 @@
         id="search"
         type="text"
         placeholder="Enter Month"
-        v-model="month"
+        v-model="month" aria-label="Insert your birth month."
       />
 
       <input id="search" 
       type="text" 
       placeholder="Enter Day" 
-      v-model="day" />
+      v-model="day"  aria-label="Insert your birth day." />
     </div>
     
-      <button type="submit" class="bingbong">
+      <button type="submit" class="bingbong" aria-label="Submit your birthday.">
       <i class="fa fa-search"></i>
       </button>
 
