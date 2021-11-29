@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="death-data">
+    <div class="birth-data">
+      <img :src ="require('../assets/match.png')">
       <h2>
         {{
           info.deaths[arrayIndex].description +
