@@ -5,7 +5,7 @@
    <div id="homeimg"></div>
     <div id="titlescreen">
         <div id="title">
-            <h2> {{ title }} </h2>
+            <h1> {{ title }} </h1>
         </div>
         <div class="infographic">
             <p> {{info}} </p>
@@ -21,7 +21,7 @@
         <div class="flipcard">
             <div class="flipcard-inner">
                 <div class="flipcard-front">
-                    <img :src="require('../assets/birthday.png')">
+                    <img :src="require('../assets/birthday.png')" alt="Baby wrapped in a blanket.">
                 </div>
                 <div class="flipcard-back">
                     <p>Have you ever wondered who you shared your special day with? With the help of Birthday Match, we can match your birthday with a figure from history. What are you waiting for? Go ahead and find your birthday twin!</p>
@@ -32,7 +32,7 @@
         <div class="flipcard">
             <div class="flipcard-inner">
                 <div class="flipcard-front">
-                    <img :src="require('../assets/death.png')">
+                    <img :src="require('../assets/death.png')" alt="Skull symbolizing death">
                 </div>
                 <div class="flipcard-back">
                     <p>We don't just stop there, we can also find out who passed on your birthday. It is like they say, "When one legend dies, another is born." What are you waiting for? Go ahead and find out!</p>
@@ -145,7 +145,7 @@ export default {
 
 .flipcard-back {
   background-color: #f6e2a8;;
-  color: #7485B8;
+  color: #354069;
   margin: 0 auto;
   transform: rotateY(180deg);
  font-family: 'EB Garamond', serif;
@@ -167,7 +167,7 @@ export default {
     text-align: center;
 }
 #recent {
-    background-color: #7485B8;
+    background-color: #CACEE2;
     margin: 0 auto;
     padding: 3rem;
     font-family: 'EB Garamond', serif;
@@ -228,7 +228,15 @@ h2 {
   font-family: 'Quicksand', sans-serif;
   font-size: 3.5rem;
   text-align: center;
-  color: #F3548C;
+  color: #FFFFFF;
+  margin: auto;
+}
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  color: #E82569;
   margin: auto;
 }
 
