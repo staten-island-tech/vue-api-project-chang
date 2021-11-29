@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <router-link to="/home">
-      <button class="button-1"><i class="fa fa-home"></i></button
+    <router-link to="/home" aria-label="link to the homepage">
+     <button class="button-1" type="button" name="button" aria-label="home"><i class="fa fa-home"></i></button
     ></router-link>
     <router-link to="/births"
-      ><button class="button-1">Births</button>
+      ><button class="button-1" type="button" name="button" aria-label="births"> Births</button>
     </router-link>
     <router-link to="/deaths"
-      ><button class="button-1">Deaths</button>
+      ><button class="button-1" type="button" name="button" aria-label="deaths">Deaths</button>
     </router-link>
   </div>
 </template>
