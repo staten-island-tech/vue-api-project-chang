@@ -74,12 +74,12 @@ export default {
   justify-content: center;
 }
 .birth-data{
-  background-color: #fbf5e4;
+  background-color: #5064aa;
   padding: 3rem;
   width: 30%;
   border-radius: 20%;
   text-align: center;
-  color: #42507B;
+  color: #d5daeb;
   margin-top: 3rem;
   
 }
