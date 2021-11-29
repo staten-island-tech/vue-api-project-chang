@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="birth-data">
-      <img :src ="require('../assets/match.png')">
+      <img :src ="require('../assets/uhoh.png')" alt="Uh oh!">
       <h2>
         {{
           info.deaths[arrayIndex].description +
@@ -24,5 +24,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.birth-data{
+  background-color:#f1acc4;
+  color: #87012f;
+}
+
+
 </style>

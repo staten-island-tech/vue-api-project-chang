@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="birth-data">
-      <img :src ="require('../assets/match.png')">
+      <img :src ="require('../assets/match.png')" alt="Its a Match!">
       <h2>
         {{
           info.births[arrayIndex].description +
