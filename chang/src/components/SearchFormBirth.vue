@@ -187,7 +187,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped >
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@500&family=Source+Sans+Pro&display=swap');
 .search-bar p {
   font-size: 1.2rem;
