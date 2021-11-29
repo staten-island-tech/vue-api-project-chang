@@ -45,7 +45,9 @@ export default {
   color: #87012f;
 }
 
-
+h1 {
+  font-size: 3.5rem;
+}
 
 
 </style>
