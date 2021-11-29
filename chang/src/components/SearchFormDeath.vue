@@ -195,7 +195,7 @@ export default {
   font-family: 'EB Garamond', sans-serif;
   font-weight: bold;
   color: #87012f;
-  margin: 0 auto;
+  width: 32rem;
 
 }
 .prevnext {
@@ -205,7 +205,7 @@ export default {
   align-items: center;
 }
 .search-bar img {
-  width: 20rem;
+  width: 25rem;
   float: right;
   margin: -1rem 10px;
 }
@@ -241,7 +241,7 @@ input:focus {
 .search-bar {
   margin: 0 auto;
   background-color: #d63970;
-  width: 40%;
+  width: 50%;
   padding: 4rem;
   border-radius: 3rem;
   text-align: center;

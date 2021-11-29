@@ -24,7 +24,7 @@ export default {
 <style>
 body {
   margin: 0 auto;
-  background-color: #42507B;
+  background-color: #4B5F9E;
 }
 </style>
 
