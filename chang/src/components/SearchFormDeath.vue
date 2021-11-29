@@ -185,11 +185,81 @@ export default {
 </script>
 
 <style scoped>
-.search-bar {
-  background-color: #d63970;
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@500&family=Source+Sans+Pro&display=swap');
+.search-bar p {
+  font-size: 1.2rem;
+  font-family: 'EB Garamond', sans-serif;
+  font-weight: bold;
+  color: #87012f;
+  margin: 0 auto;
+
+}
+.prevnext {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.search-bar img {
+  width: 20rem;
+  float: right;
+  margin: -1rem 10px;
+}
+input {
+  display: block;
+  width: 50%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid  #eee;
+  transition: .5s border-color;
+  height: 2rem;
+  font-size: 1.5rem;
+
+}
+::placeholder {
+  opacity: 0.5;
+}
+.inputbars {
+  margin: 30px;
+}
+input:hover {
+  border: 2px solid #aaa;
 }
 
-.search-bar p {
-  color: #87012f;
+input:focus {
+  border: 2px solid black;
 }
+*:focus {
+  outline:none;
+}
+
+.search-bar {
+  margin: 0 auto;
+  background-color: #d63970;
+  width: 40%;
+  padding: 4rem;
+  border-radius: 3rem;
+  text-align: center;
+}
+
+.containthis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bingbong{
+  padding: 5px 2rem;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  border: none;
+}
+
+.bingbong:hover {
+  background-color: #d0d0d0;
+}
+
+
 </style>
