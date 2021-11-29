@@ -1,5 +1,5 @@
 <template>
-  <button class="btn">Previous</button>
+  <button class="btn">&#8249;</button>
 </template>
 
 <script>
