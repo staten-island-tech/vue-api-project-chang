@@ -1,44 +1,53 @@
 <template>
-<div class="containthis">
-  <div class="search-bar">
+  <div class="containthis">
+    <div class="search-bar">
+      <img :src="require('../assets/logo.png')" alt="Logo Birthday Match" />
+      <form
+        @submit.prevent="
+          switchStatement();
+          fetchData();
+        "
+      >
+        <div class="inputbars">
+          <p>
+            Type in your birthday month in words or numerical format (1-12).
+            Type in your birthday date.
+          </p>
+          <input
+            id="search"
+            type="text"
+            placeholder="Enter Month"
+            v-model="month"
+            aria-label="Insert your birth month."
+          />
 
-    <img :src="require('../assets/logo.png')" alt="Logo Birthday Match">
-    <form
-      @submit.prevent="
-        switchStatement();
-        fetchData();
-      "
-    >
-    <div class="inputbars">
-      <p> Type in your birthday month in words or numerical format (1-12). Type in your birthday date. </p>
-      <input
-        id="search"
-        type="text"
-        placeholder="Enter Month"
-        v-model="month" aria-label="Insert your birth month."
-      />
+          <input
+            id="search"
+            type="text"
+            placeholder="Enter Day"
+            v-model="day"
+            aria-label="Insert your birth day."
+          />
+        </div>
 
-      <input id="search" 
-      type="text" 
-      placeholder="Enter Day" 
-      v-model="day"  aria-label="Insert your birth day." />
-    </div>
-    
-      <button type="submit" class="bingbong" aria-label="Submit your birthday.">
-      <i class="fa fa-search"></i>
-      </button>
-
-    </form>
-    <SearchedBirthData :info="birthData" :arrayIndex="this.index" />
-    <div class="prevnext">
-    <PreviousButton @click.native="decreaseIndex" v-show="this.index > 0" />
-      <NextButton
-      @click.native="increaseIndex"
-      v-show="this.index < this.apiLength - 1"
-    />
+        <button
+          type="submit"
+          class="bingbong"
+          aria-label="Submit your birthday."
+        >
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+      <SearchedBirthData :info="birthData" :arrayIndex="this.index" />
+      <div class="prevnext">
+        <PreviousButton @click.native="decreaseIndex" v-show="this.index > 0" />
+        <NextButton
+          @click.native="increaseIndex"
+          v-show="this.index < this.apiLength - 1"
+        />
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -52,7 +61,6 @@ export default {
     SearchedBirthData,
     NextButton,
     PreviousButton,
-  
   },
   data() {
     return {
@@ -73,6 +81,7 @@ export default {
         const result = await fetch(
           `https://byabbe.se/on-this-day/${this.month}/${this.day}/births.json`
         );
+        this.index = 0;
         const apiData = await result.json();
         this.year = apiData.births[this.index].year;
         this.birthDescription = apiData.births[this.index].description;
@@ -190,14 +199,13 @@ export default {
 </script>
 
 <style scoped >
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@500&family=Source+Sans+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@500&family=Source+Sans+Pro&display=swap");
 .search-bar p {
   font-size: 1.2rem;
-  font-family: 'EB Garamond', sans-serif;
+  font-family: "EB Garamond", sans-serif;
   font-weight: bold;
   color: #8b6d0f;
   width: 32rem;
-
 }
 .prevnext {
   display: flex;
@@ -216,11 +224,10 @@ input {
   margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid  #eee;
-  transition: .5s border-color;
+  border: 2px solid #eee;
+  transition: 0.5s border-color;
   height: 2rem;
   font-size: 1.5rem;
-
 }
 ::placeholder {
   opacity: 0.5;
@@ -236,7 +243,7 @@ input:focus {
   border: 2px solid black;
 }
 *:focus {
-  outline:none;
+  outline: none;
 }
 
 .search-bar {
@@ -246,7 +253,6 @@ input:focus {
   padding: 4rem;
   border-radius: 3rem;
   text-align: center;
-  
 }
 
 .containthis {
@@ -255,7 +261,7 @@ input:focus {
   justify-content: center;
 }
 
-.bingbong{
+.bingbong {
   padding: 5px 2rem;
   font-size: 1.5rem;
   border-radius: 6px;
