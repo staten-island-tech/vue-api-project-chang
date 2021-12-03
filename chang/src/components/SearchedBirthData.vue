@@ -33,9 +33,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f7e7b6;
+  background-color: #1d2266;
   font-family: "Quicksand", sans-serif;
-  color: #a17d12;
+  color: white;
   width: 80%;
   height: 40vh;
   text-align: center;

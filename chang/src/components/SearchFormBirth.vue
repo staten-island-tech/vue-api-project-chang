@@ -204,7 +204,7 @@ export default {
   font-size: 1.2rem;
   font-family: "EB Garamond", sans-serif;
   font-weight: bold;
-  color: #8b6d0f;
+  color: white;
   width: 32rem;
 }
 .prevnext {
@@ -248,8 +248,8 @@ input:focus {
 
 .search-bar {
   margin: 0 auto;
-  background-color: #efcf6c;
-  width: 50%;
+  background-color: #1d2266;
+  width: 55%;
   padding: 4rem;
   border-radius: 3rem;
   text-align: center;
