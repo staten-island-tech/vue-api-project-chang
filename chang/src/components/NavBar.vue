@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <router-link to="/home" aria-label="link to the homepage">
+    <router-link to="/" aria-label="link to the homepage">
      <button class="button-1" type="button" name="button" aria-label="home"><i class="fa fa-home"></i></button
     ></router-link>
     <router-link to="/births"
